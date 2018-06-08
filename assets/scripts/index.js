@@ -16,4 +16,5 @@ $(() => {
   $('#sign-in-form').on('submit', events.onSignIn)
   $('#change-password-form').on('submit', events.onChangePassword)
   $('#sign-out').on('click', events.onSignOut)
+  $('#reset').on('click', events.onReset)
 })

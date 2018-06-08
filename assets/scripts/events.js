@@ -6,6 +6,7 @@ const api = require('./api.js')
 // we created above.
 let round = 0
 let gameOn = true
+let winner = null
 
 // This sets the value on screen to x or o as appropriate.
 // The round ++ tracks the round and alternates between o and x.
@@ -54,7 +55,7 @@ const onClick = function (event) {
   // console.log('OMG A CLICK')
   // console.log('event is' + this.id)
   // console.log(typeof this.id)
-  round++
+  round = round + 1
   console.log('Round ' + round)
   if (round % 2 === 1) {
     document.getElementById(this.id).innerHTML = 'x'
@@ -67,9 +68,8 @@ const onClick = function (event) {
     boxes[theNum].value = 'o'
     // console.log('theNum is' + theNum + 'and boxes[theNum].value is' + boxes[theNum].value)
   }
-  console.log('The round in here is ' + round)
   if (boxes[0].value === 'x' && boxes[1].value === 'x' && boxes[2].value === 'x') {
-    const winner = 'Player 1'
+    winner = 'Player 1'
     console.log('The winner is ' + winner)
     gameOn = false
     if (gameOn !== true) {
@@ -84,7 +84,7 @@ const onClick = function (event) {
       $('#box8').off('click', onClick)
     }
   } else if (boxes[3].value === 'x' && boxes[4].value === 'x' && boxes[5].value === 'x') {
-    const winner = 'Player 1'
+    winner = 'Player 1'
     console.log('The winner is ' + winner)
     gameOn = false
     if (gameOn !== true) {
@@ -99,7 +99,7 @@ const onClick = function (event) {
       $('#box8').off('click', onClick)
     }
   } else if (boxes[6].value === 'x' && boxes[7].value === 'x' && boxes[8].value === 'x') {
-    const winner = 'Player 1'
+    winner = 'Player 1'
     console.log('The winner is ' + winner)
     gameOn = false
     if (gameOn !== true) {
@@ -114,7 +114,7 @@ const onClick = function (event) {
       $('#box8').off('click', onClick)
     }
   } else if (boxes[0].value === 'x' && boxes[3].value === 'x' && boxes[6].value === 'x') {
-    const winner = 'Player 1'
+    winner = 'Player 1'
     console.log('The winner is ' + winner)
     gameOn = false
     if (gameOn !== true) {
@@ -129,7 +129,7 @@ const onClick = function (event) {
       $('#box8').off('click', onClick)
     }
   } else if (boxes[1].value === 'x' && boxes[4].value === 'x' && boxes[7].value === 'x') {
-    const winner = 'Player 1'
+    winner = 'Player 1'
     console.log('The winner is ' + winner)
     gameOn = false
     if (gameOn !== true) {
@@ -144,7 +144,7 @@ const onClick = function (event) {
       $('#box8').off('click', onClick)
     }
   } else if (boxes[2].value === 'x' && boxes[5].value === 'x' && boxes[8].value === 'x') {
-    const winner = 'Player 1'
+    winner = 'Player 1'
     console.log('The winner is ' + winner)
     gameOn = false
     if (gameOn !== true) {
@@ -159,7 +159,7 @@ const onClick = function (event) {
       $('#box8').off('click', onClick)
     }
   } else if (boxes[0].value === 'x' && boxes[4].value === 'x' && boxes[8].value === 'x') {
-    const winner = 'Player 1'
+    winner = 'Player 1'
     console.log('The winner is ' + winner)
     gameOn = false
     if (gameOn !== true) {
@@ -174,7 +174,7 @@ const onClick = function (event) {
       $('#box8').off('click', onClick)
     }
   } else if (boxes[2].value === 'x' && boxes[4].value === 'x' && boxes[6].value === 'x') {
-    const winner = 'Player 1'
+    winner = 'Player 1'
     console.log('The winner is ' + winner)
     gameOn = false
     if (gameOn !== true) {
@@ -189,7 +189,7 @@ const onClick = function (event) {
       $('#box8').off('click', onClick)
     }
   } else if (boxes[0].value === 'o' && boxes[1].value === 'o' && boxes[2].value === 'o') {
-    const winner = 'Player 2'
+    winner = 'Player 2'
     console.log('The winner is ' + winner)
     gameOn = false
     if (gameOn !== true) {
@@ -204,7 +204,7 @@ const onClick = function (event) {
       $('#box8').off('click', onClick)
     }
   } else if (boxes[3].value === 'o' && boxes[4].value === 'o' && boxes[5].value === 'o') {
-    const winner = 'Player 2'
+    winner = 'Player 2'
     console.log('The winner is ' + winner)
     gameOn = false
     if (gameOn !== true) {
@@ -219,7 +219,7 @@ const onClick = function (event) {
       $('#box8').off('click', onClick)
     }
   } else if (boxes[6].value === 'o' && boxes[7].value === 'o' && boxes[8].value === 'o') {
-    const winner = 'Player 2'
+    winner = 'Player 2'
     console.log('The winner is ' + winner)
     gameOn = false
     if (gameOn !== true) {
@@ -234,7 +234,7 @@ const onClick = function (event) {
       $('#box8').off('click', onClick)
     }
   } else if (boxes[0].value === 'o' && boxes[3].value === 'o' && boxes[6].value === 'o') {
-    const winner = 'Player 2'
+    winner = 'Player 2'
     console.log('The winner is ' + winner)
     gameOn = false
     if (gameOn !== true) {
@@ -249,7 +249,7 @@ const onClick = function (event) {
       $('#box8').off('click', onClick)
     }
   } else if (boxes[1].value === 'o' && boxes[4].value === 'o' && boxes[7].value === 'o') {
-    const winner = 'Player 2'
+    winner = 'Player 2'
     console.log('The winner is ' + winner)
     gameOn = false
     if (gameOn !== true) {
@@ -264,7 +264,7 @@ const onClick = function (event) {
       $('#box8').off('click', onClick)
     }
   } else if (boxes[2].value === 'o' && boxes[5].value === 'o' && boxes[8].value === 'o') {
-    const winner = 'Player 2'
+    winner = 'Player 2'
     console.log('The winner is ' + winner)
     gameOn = false
     if (gameOn !== true) {
@@ -279,7 +279,7 @@ const onClick = function (event) {
       $('#box8').off('click', onClick)
     }
   } else if (boxes[0].value === 'o' && boxes[4].value === 'o' && boxes[8].value === 'o') {
-    const winner = 'Player 2'
+    winner = 'Player 2'
     console.log('The winner is ' + winner)
     gameOn = false
     if (gameOn !== true) {
@@ -294,7 +294,7 @@ const onClick = function (event) {
       $('#box8').off('click', onClick)
     }
   } else if (boxes[2].value === 'o' && boxes[4].value === 'o' && boxes[6].value === 'o') {
-    const winner = 'Player 2'
+    winner = 'Player 2'
     console.log('The winner is ' + winner)
     gameOn = false
     if (gameOn !== true) {
@@ -309,7 +309,7 @@ const onClick = function (event) {
       $('#box8').off('click', onClick)
     }
   } else if (round > 8) {
-    const winner = 'Draw'
+    winner = 'Draw'
     console.log('The game is a ' + winner)
     gameOn = false
     if (gameOn !== true) {
@@ -325,6 +325,40 @@ const onClick = function (event) {
     }
   }
 }
+
+const onReset = function (event) {
+  event.preventDefault()
+  document.getElementById('box0').innerHTML = ' '
+  document.getElementById('box1').innerHTML = ' '
+  document.getElementById('box2').innerHTML = ' '
+  document.getElementById('box3').innerHTML = ' '
+  document.getElementById('box4').innerHTML = ' '
+  document.getElementById('box5').innerHTML = ' '
+  document.getElementById('box6').innerHTML = ' '
+  document.getElementById('box7').innerHTML = ' '
+  document.getElementById('box8').innerHTML = ' '
+  $('#box0').one('click', onClick)
+  $('#box1').one('click', onClick)
+  $('#box2').one('click', onClick)
+  $('#box3').one('click', onClick)
+  $('#box4').one('click', onClick)
+  $('#box5').one('click', onClick)
+  $('#box6').one('click', onClick)
+  $('#box7').one('click', onClick)
+  $('#box8').one('click', onClick)
+  boxes[0].value = null
+  boxes[1].value = null
+  boxes[2].value = null
+  boxes[3].value = null
+  boxes[4].value = null
+  boxes[5].value = null
+  boxes[6].value = null
+  boxes[7].value = null
+  boxes[8].value = null
+  round = 0
+}
+
+console.log('gameOn is ' + gameOn)
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -366,5 +400,5 @@ module.exports = {
   onSignIn: onSignIn,
   onChangePassword: onChangePassword,
   onSignOut: onSignOut,
-  gameOn: gameOn
+  onReset: onReset
 }
