@@ -7,6 +7,9 @@ const api = require('./api.js')
 let round = 0
 let gameOn = true
 let winner = null
+let player1Wins = 0
+let player2Wins = 0
+let draws = 0
 
 // This sets the value on screen to x or o as appropriate.
 // The round ++ tracks the round and alternates between o and x.
@@ -57,6 +60,9 @@ const onClick = function (event) {
   // console.log(typeof this.id)
   round = round + 1
   console.log('Round ' + round)
+  console.log('Player 1 Wins: ' + player1Wins)
+  console.log('Player 2 Wins: ' + player2Wins)
+  console.log('Draws: ' + draws)
   if (round % 2 === 1) {
     document.getElementById(this.id).innerHTML = 'x'
     const theNum = this.id.replace(/^\D+/g, '')
@@ -72,6 +78,7 @@ const onClick = function (event) {
     winner = 'Player 1'
     console.log('The winner is ' + winner)
     gameOn = false
+    player1Wins++
     if (gameOn !== true) {
       $('#box0').off('click', onClick)
       $('#box1').off('click', onClick)
@@ -83,10 +90,12 @@ const onClick = function (event) {
       $('#box7').off('click', onClick)
       $('#box8').off('click', onClick)
     }
+    return player1Wins
   } else if (boxes[3].value === 'x' && boxes[4].value === 'x' && boxes[5].value === 'x') {
     winner = 'Player 1'
     console.log('The winner is ' + winner)
     gameOn = false
+    player1Wins++
     if (gameOn !== true) {
       $('#box0').off('click', onClick)
       $('#box1').off('click', onClick)
@@ -98,10 +107,12 @@ const onClick = function (event) {
       $('#box7').off('click', onClick)
       $('#box8').off('click', onClick)
     }
+    return player1Wins
   } else if (boxes[6].value === 'x' && boxes[7].value === 'x' && boxes[8].value === 'x') {
     winner = 'Player 1'
     console.log('The winner is ' + winner)
     gameOn = false
+    player1Wins++
     if (gameOn !== true) {
       $('#box0').off('click', onClick)
       $('#box1').off('click', onClick)
@@ -113,10 +124,12 @@ const onClick = function (event) {
       $('#box7').off('click', onClick)
       $('#box8').off('click', onClick)
     }
+    return player1Wins
   } else if (boxes[0].value === 'x' && boxes[3].value === 'x' && boxes[6].value === 'x') {
     winner = 'Player 1'
     console.log('The winner is ' + winner)
     gameOn = false
+    player1Wins++
     if (gameOn !== true) {
       $('#box0').off('click', onClick)
       $('#box1').off('click', onClick)
@@ -128,10 +141,12 @@ const onClick = function (event) {
       $('#box7').off('click', onClick)
       $('#box8').off('click', onClick)
     }
+    return player1Wins
   } else if (boxes[1].value === 'x' && boxes[4].value === 'x' && boxes[7].value === 'x') {
     winner = 'Player 1'
     console.log('The winner is ' + winner)
     gameOn = false
+    player1Wins++
     if (gameOn !== true) {
       $('#box0').off('click', onClick)
       $('#box1').off('click', onClick)
@@ -143,10 +158,12 @@ const onClick = function (event) {
       $('#box7').off('click', onClick)
       $('#box8').off('click', onClick)
     }
+    return player1Wins
   } else if (boxes[2].value === 'x' && boxes[5].value === 'x' && boxes[8].value === 'x') {
     winner = 'Player 1'
     console.log('The winner is ' + winner)
     gameOn = false
+    player1Wins++
     if (gameOn !== true) {
       $('#box0').off('click', onClick)
       $('#box1').off('click', onClick)
@@ -158,10 +175,12 @@ const onClick = function (event) {
       $('#box7').off('click', onClick)
       $('#box8').off('click', onClick)
     }
+    return player1Wins
   } else if (boxes[0].value === 'x' && boxes[4].value === 'x' && boxes[8].value === 'x') {
     winner = 'Player 1'
     console.log('The winner is ' + winner)
     gameOn = false
+    player1Wins++
     if (gameOn !== true) {
       $('#box0').off('click', onClick)
       $('#box1').off('click', onClick)
@@ -173,10 +192,12 @@ const onClick = function (event) {
       $('#box7').off('click', onClick)
       $('#box8').off('click', onClick)
     }
+    return player1Wins
   } else if (boxes[2].value === 'x' && boxes[4].value === 'x' && boxes[6].value === 'x') {
     winner = 'Player 1'
     console.log('The winner is ' + winner)
     gameOn = false
+    player1Wins++
     if (gameOn !== true) {
       $('#box0').off('click', onClick)
       $('#box1').off('click', onClick)
@@ -188,10 +209,12 @@ const onClick = function (event) {
       $('#box7').off('click', onClick)
       $('#box8').off('click', onClick)
     }
+    return player1Wins
   } else if (boxes[0].value === 'o' && boxes[1].value === 'o' && boxes[2].value === 'o') {
     winner = 'Player 2'
     console.log('The winner is ' + winner)
     gameOn = false
+    player1Wins++
     if (gameOn !== true) {
       $('#box0').off('click', onClick)
       $('#box1').off('click', onClick)
@@ -203,8 +226,10 @@ const onClick = function (event) {
       $('#box7').off('click', onClick)
       $('#box8').off('click', onClick)
     }
+    return player2Wins
   } else if (boxes[3].value === 'o' && boxes[4].value === 'o' && boxes[5].value === 'o') {
     winner = 'Player 2'
+    player2Wins++
     console.log('The winner is ' + winner)
     gameOn = false
     if (gameOn !== true) {
@@ -218,10 +243,12 @@ const onClick = function (event) {
       $('#box7').off('click', onClick)
       $('#box8').off('click', onClick)
     }
+    return player2Wins
   } else if (boxes[6].value === 'o' && boxes[7].value === 'o' && boxes[8].value === 'o') {
     winner = 'Player 2'
     console.log('The winner is ' + winner)
     gameOn = false
+    player2Wins++
     if (gameOn !== true) {
       $('#box0').off('click', onClick)
       $('#box1').off('click', onClick)
@@ -233,10 +260,12 @@ const onClick = function (event) {
       $('#box7').off('click', onClick)
       $('#box8').off('click', onClick)
     }
+    return player2Wins
   } else if (boxes[0].value === 'o' && boxes[3].value === 'o' && boxes[6].value === 'o') {
     winner = 'Player 2'
     console.log('The winner is ' + winner)
     gameOn = false
+    player2Wins++
     if (gameOn !== true) {
       $('#box0').off('click', onClick)
       $('#box1').off('click', onClick)
@@ -248,10 +277,12 @@ const onClick = function (event) {
       $('#box7').off('click', onClick)
       $('#box8').off('click', onClick)
     }
+    return player2Wins
   } else if (boxes[1].value === 'o' && boxes[4].value === 'o' && boxes[7].value === 'o') {
     winner = 'Player 2'
     console.log('The winner is ' + winner)
     gameOn = false
+    player2Wins++
     if (gameOn !== true) {
       $('#box0').off('click', onClick)
       $('#box1').off('click', onClick)
@@ -263,10 +294,12 @@ const onClick = function (event) {
       $('#box7').off('click', onClick)
       $('#box8').off('click', onClick)
     }
+    return player2Wins
   } else if (boxes[2].value === 'o' && boxes[5].value === 'o' && boxes[8].value === 'o') {
     winner = 'Player 2'
     console.log('The winner is ' + winner)
     gameOn = false
+    player2Wins++
     if (gameOn !== true) {
       $('#box0').off('click', onClick)
       $('#box1').off('click', onClick)
@@ -278,10 +311,12 @@ const onClick = function (event) {
       $('#box7').off('click', onClick)
       $('#box8').off('click', onClick)
     }
+    return player2Wins
   } else if (boxes[0].value === 'o' && boxes[4].value === 'o' && boxes[8].value === 'o') {
     winner = 'Player 2'
     console.log('The winner is ' + winner)
     gameOn = false
+    player2Wins++
     if (gameOn !== true) {
       $('#box0').off('click', onClick)
       $('#box1').off('click', onClick)
@@ -293,10 +328,12 @@ const onClick = function (event) {
       $('#box7').off('click', onClick)
       $('#box8').off('click', onClick)
     }
+    return player2Wins
   } else if (boxes[2].value === 'o' && boxes[4].value === 'o' && boxes[6].value === 'o') {
     winner = 'Player 2'
     console.log('The winner is ' + winner)
     gameOn = false
+    player2Wins++
     if (gameOn !== true) {
       $('#box0').off('click', onClick)
       $('#box1').off('click', onClick)
@@ -308,10 +345,12 @@ const onClick = function (event) {
       $('#box7').off('click', onClick)
       $('#box8').off('click', onClick)
     }
+    return player2Wins
   } else if (round > 8) {
     winner = 'Draw'
     console.log('The game is a ' + winner)
     gameOn = false
+    draws++
     if (gameOn !== true) {
       $('#box0').off('click', onClick)
       $('#box1').off('click', onClick)
@@ -323,6 +362,7 @@ const onClick = function (event) {
       $('#box7').off('click', onClick)
       $('#box8').off('click', onClick)
     }
+    return draws
   }
 }
 
@@ -357,8 +397,6 @@ const onReset = function (event) {
   boxes[8].value = null
   round = 0
 }
-
-console.log('gameOn is ' + gameOn)
 
 const onSignUp = function (event) {
   event.preventDefault()
