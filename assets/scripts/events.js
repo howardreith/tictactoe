@@ -366,37 +366,37 @@ const onClick = function (event) {
   }
 }
 
-const onReset = function (event) {
-  event.preventDefault()
-  document.getElementById('box0').innerHTML = ' '
-  document.getElementById('box1').innerHTML = ' '
-  document.getElementById('box2').innerHTML = ' '
-  document.getElementById('box3').innerHTML = ' '
-  document.getElementById('box4').innerHTML = ' '
-  document.getElementById('box5').innerHTML = ' '
-  document.getElementById('box6').innerHTML = ' '
-  document.getElementById('box7').innerHTML = ' '
-  document.getElementById('box8').innerHTML = ' '
-  $('#box0').one('click', onClick)
-  $('#box1').one('click', onClick)
-  $('#box2').one('click', onClick)
-  $('#box3').one('click', onClick)
-  $('#box4').one('click', onClick)
-  $('#box5').one('click', onClick)
-  $('#box6').one('click', onClick)
-  $('#box7').one('click', onClick)
-  $('#box8').one('click', onClick)
-  boxes[0].value = null
-  boxes[1].value = null
-  boxes[2].value = null
-  boxes[3].value = null
-  boxes[4].value = null
-  boxes[5].value = null
-  boxes[6].value = null
-  boxes[7].value = null
-  boxes[8].value = null
-  round = 0
-}
+// const onReset = function (event) {
+//   event.preventDefault()
+//   document.getElementById('box0').innerHTML = ' '
+//   document.getElementById('box1').innerHTML = ' '
+//   document.getElementById('box2').innerHTML = ' '
+//   document.getElementById('box3').innerHTML = ' '
+//   document.getElementById('box4').innerHTML = ' '
+//   document.getElementById('box5').innerHTML = ' '
+//   document.getElementById('box6').innerHTML = ' '
+//   document.getElementById('box7').innerHTML = ' '
+//   document.getElementById('box8').innerHTML = ' '
+//   $('#box0').one('click', onClick)
+//   $('#box1').one('click', onClick)
+//   $('#box2').one('click', onClick)
+//   $('#box3').one('click', onClick)
+//   $('#box4').one('click', onClick)
+//   $('#box5').one('click', onClick)
+//   $('#box6').one('click', onClick)
+//   $('#box7').one('click', onClick)
+//   $('#box8').one('click', onClick)
+//   boxes[0].value = null
+//   boxes[1].value = null
+//   boxes[2].value = null
+//   boxes[3].value = null
+//   boxes[4].value = null
+//   boxes[5].value = null
+//   boxes[6].value = null
+//   boxes[7].value = null
+//   boxes[8].value = null
+//   round = 0
+// }
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -434,6 +434,34 @@ const onSignOut = function (event) {
 
 const onNewGame = function (event) {
   event.preventDefault()
+  document.getElementById('box0').innerHTML = ' '
+  document.getElementById('box1').innerHTML = ' '
+  document.getElementById('box2').innerHTML = ' '
+  document.getElementById('box3').innerHTML = ' '
+  document.getElementById('box4').innerHTML = ' '
+  document.getElementById('box5').innerHTML = ' '
+  document.getElementById('box6').innerHTML = ' '
+  document.getElementById('box7').innerHTML = ' '
+  document.getElementById('box8').innerHTML = ' '
+  $('#box0').one('click', onClick)
+  $('#box1').one('click', onClick)
+  $('#box2').one('click', onClick)
+  $('#box3').one('click', onClick)
+  $('#box4').one('click', onClick)
+  $('#box5').one('click', onClick)
+  $('#box6').one('click', onClick)
+  $('#box7').one('click', onClick)
+  $('#box8').one('click', onClick)
+  boxes[0].value = null
+  boxes[1].value = null
+  boxes[2].value = null
+  boxes[3].value = null
+  boxes[4].value = null
+  boxes[5].value = null
+  boxes[6].value = null
+  boxes[7].value = null
+  boxes[8].value = null
+  round = 0
   api.createGame()
     .then(authUi.createGameSuccess)
     .catch(authUi.createGameFail)
@@ -459,7 +487,6 @@ module.exports = {
   onSignIn: onSignIn,
   onChangePassword: onChangePassword,
   onSignOut: onSignOut,
-  onReset: onReset,
   onNewGame: onNewGame,
   onGetGameData: onGetGameData,
   onUpdateMove: onUpdateMove
