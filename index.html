@@ -18,40 +18,29 @@
           <div class="navbar-header">
             <a class="navbar-brand" href="#">Tic Tac Toe</a>
           </div>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <form id="sign-in-form">
-              <button type="submit" class = "submit">Sign In</button>
-              <input name="credentials[password]" class = "password" placeholder="Password" type="password">
-              <input name="credentials[email]" class = "email" placeholder="Email" type="email">
+              <button type="submit" class = "sign-in-submit">Sign In</button>
+              <input name="credentials[password]" class = "sign-in-password" placeholder="Password" type="password">
+              <input name="credentials[email]" class = "sign-in-email" placeholder="Sign In - Email " type="email">
             </form>
-          </ul>
+            <form id="sign-up-form">
+              <button type="submit" class="sign-up-button">Sign Up</button>
+              <input name="credentials[password_confirmation]" class = "sign-up-confirm" placeholder="Password Confirmation" type="text">
+              <input name="credentials[password]" class = "sign-up-password" placeholder="Password" type="text">
+              <input name="credentials[email]" class = "sign-up-email" placeholder="Sign Up - Email" type="text">
+            </form>
+            <form id="change-password-form">
+              <button type="submit" class="change-password-button">Change Password</button>
+              <input name="passwords[new]" class="change-password-new" placeholder="New Password" type="text">
+              <input name="passwords[old]" class="change-password-old" placeholder="Old Password" type="text">
+            </form>
+            <section>
+              <button id='sign-out'>Sign Out</button>
+            </section>
         </div>
       </nav>
 
       <h1>Tic Tac Toe</h1>
-
-      <h3>Sign Up</h3>
-      <form id="sign-up-form">
-        <input name="credentials[email]" placeholder="Email" type="text">
-        <input name="credentials[password]" placeholder="Password" type="text">
-        <input name="credentials[password_confirmation]" placeholder="Password Confirmation" type="text">
-        <button type="submit">Sign Up</button>
-      </form>
-
-      <h3> Sign In </h3>
-
-
-      <h3> Change Password </h3>
-      <form id="change-password-form">
-        <input name="passwords[old]" placeholder="Old Password" type="text">
-        <input name="passwords[new]" placeholder="New Password" type="text">
-        <button type="submit">Change Password</button>
-      </form>
-
-<section>
-  <button id='sign-out'> Sign Out</button>
-</section>
 
       <div class="row">
         <div class="col-md-4 box" id="box0">Box 0</div>

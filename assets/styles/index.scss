@@ -11,18 +11,61 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   margin: auto;
 }
 
-.password {
+.sign-in-password {
   float: right;
 }
 
-.email {
+.sign-in-email {
   float: right;
 }
 
-.submit {
+.sign-in-submit {
+  float: right;
+}
+
+.sign-up-email {
+  float: right;
+}
+
+.sign-up-password {
+  float: right;
+}
+
+.sign-up-confirm {
+  float: right;
+}
+
+.sign-up-button {
+  float: right;
+}
+
+.change-password-new {
+  float: right;
+}
+
+.change-password-old {
+  float: right;
+}
+
+.change-password-button {
   float: right;
 }
 
 #sign-in-form {
   overflow: hidden;
+}
+
+#sign-up-form {
+  clear: right;
+  float: right;
+}
+
+#change-password-form {
+  clear: right;
+  float: right;
+}
+
+#sign-out {
+  clear: right;
+  float: right;
 }
