@@ -50,6 +50,30 @@ const signOutError = function (error) {
   console.log('Error is ', error)
 }
 
+const createGameSuccess = function (createGameResponse) {
+  console.log('createGameResponse is', createGameResponse)
+}
+
+const createGameFail = function (error) {
+  console.log('Error is ', error)
+}
+
+const getGameDataSuccess = function (getGameDataResponse) {
+  console.log('getGameDataResonse is', getGameDataResponse)
+}
+
+const getGameDataFail = function (error) {
+  console.log('Error is ', error)
+}
+
+const updateMoveSuccess = function (updateMoveResponse) {
+  console.log('updateMoveResonse is', updateMoveResponse)
+}
+
+const updateMoveFail = function (error) {
+  console.log('Error is ', error)
+}
+
 module.exports = {
   clickSuccess: clickSuccess,
   clickError: clickError,
@@ -60,5 +84,11 @@ module.exports = {
   changePasswordSuccess: changePasswordSuccess,
   changePasswordError: changePasswordError,
   signOutSuccess: signOutSuccess,
-  signOutError: signOutError
+  signOutError: signOutError,
+  createGameSuccess: createGameSuccess,
+  createGameFail: createGameFail,
+  getGameDataSuccess: getGameDataSuccess,
+  getGameDataFail: getGameDataFail,
+  updateMoveSuccess: updateMoveSuccess,
+  updateMoveFail: updateMoveFail
 }

@@ -17,4 +17,7 @@ $(() => {
   $('#change-password-form').on('submit', events.onChangePassword)
   $('#sign-out').on('click', events.onSignOut)
   $('#reset').on('click', events.onReset)
+  $('#newGame').on('click', events.onNewGame)
+  $('#getGameData').on('click', events.onGetGameData)
+  $('#updateMoveTest').on('click', events.onUpdateMove)
 })

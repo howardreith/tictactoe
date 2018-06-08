@@ -432,11 +432,35 @@ const onSignOut = function (event) {
     .catch(authUi.signOutFail)
 }
 
+const onNewGame = function (event) {
+  event.preventDefault()
+  api.createGame()
+    .then(authUi.createGameSuccess)
+    .catch(authUi.createGameFail)
+}
+
+const onGetGameData = function (event) {
+  event.preventDefault()
+  api.getGameData()
+    .then(authUi.getGameDataSuccess)
+    .catch(authUi.getGameDataFail)
+}
+
+const onUpdateMove = function (event) {
+  event.preventDefault()
+  api.updateMove()
+    .then(authUi.updateMoveSuccess)
+    .catch(authUi.updateMoveFail)
+}
+
 module.exports = {
   onClick: onClick,
   onSignUp: onSignUp,
   onSignIn: onSignIn,
   onChangePassword: onChangePassword,
   onSignOut: onSignOut,
-  onReset: onReset
+  onReset: onReset,
+  onNewGame: onNewGame,
+  onGetGameData: onGetGameData,
+  onUpdateMove: onUpdateMove
 }

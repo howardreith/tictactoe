@@ -41,9 +41,42 @@ const signOut = function () {
   })
 }
 
+const createGame = function () {
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/games',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const getGameData = function () {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/games',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const updateMove = function () {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/games' + 1,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp: signUp,
   signIn: signIn,
   changePassword: changePassword,
-  signOut: signOut
+  signOut: signOut,
+  createGame: createGame,
+  getGameData: getGameData,
+  updateMove: updateMove
 }
