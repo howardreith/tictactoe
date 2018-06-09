@@ -67,12 +67,36 @@ const onClick = function (event) {
     document.getElementById(this.id).innerHTML = 'x'
     const theNum = this.id.replace(/^\D+/g, '')
     boxes[theNum].value = 'x'
+    // On each click it needs to send to the server the index of the square
+    // which is theNum and the value of the square which is x in this case.
+    const onUpdateMove = function (event) {
+      const index = theNum
+      const gameValue = 'x'
+
+      api.updateMove(index, gameValue)
+        .then(authUi.updateMoveSuccess)
+        .catch(authUi.updateMoveFail)
+    }
+    module.export = {
+      onUpdateMove: onUpdateMove
+    }
     // console.log('theNum is' + theNum + 'and boxes[theNum].value is' + boxes[theNum].value)
   } else if (round % 2 === 0) {
     document.getElementById(this.id).innerHTML = 'o'
     const theNum = this.id.replace(/^\D+/g, '')
     boxes[theNum].value = 'o'
-    // console.log('theNum is' + theNum + 'and boxes[theNum].value is' + boxes[theNum].value)
+    // ditto here. Sending the index and value of the clicked squrae to server.
+    const onUpdateMove = function (event) {
+      const index = theNum
+      const gameValue = 'o'
+
+      api.updateMove(index, gameValue)
+        .then(authUi.updateMoveSuccess)
+        .catch(authUi.updateMoveFail)
+    }
+    module.export = {
+      onUpdateMove: onUpdateMove
+    }
   }
   if (boxes[0].value === 'x' && boxes[1].value === 'x' && boxes[2].value === 'x') {
     winner = 'Player 1'
@@ -90,6 +114,7 @@ const onClick = function (event) {
       $('#box7').off('click', onClick)
       $('#box8').off('click', onClick)
     }
+    // Need to add function that notifies server of win.
     return player1Wins
   } else if (boxes[3].value === 'x' && boxes[4].value === 'x' && boxes[5].value === 'x') {
     winner = 'Player 1'
