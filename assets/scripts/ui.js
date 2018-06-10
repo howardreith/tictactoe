@@ -52,6 +52,8 @@ const signOutError = function (error) {
 
 const createGameSuccess = function (createGameResponse) {
   console.log('createGameResponse is', createGameResponse)
+  store.id = createGameResponse.game.id
+  console.log('store.id is' + store.id)
 }
 
 const createGameFail = function (error) {
@@ -63,6 +65,14 @@ const getGameDataSuccess = function (getGameDataResponse) {
 }
 
 const getGameDataFail = function (error) {
+  console.log('Error is ', error)
+}
+
+const getThisGameDataSuccess = function (getThisGameDataSuccess) {
+  console.log('getThisGameDataSuccess is', getThisGameDataSuccess)
+}
+
+const getThisGameDataFail = function (error) {
   console.log('Error is ', error)
 }
 
@@ -89,6 +99,8 @@ module.exports = {
   createGameFail: createGameFail,
   getGameDataSuccess: getGameDataSuccess,
   getGameDataFail: getGameDataFail,
+  getThisGameDataSuccess: getThisGameDataSuccess,
+  getThisGameDataFail: getThisGameDataFail,
   updateMoveSuccess: updateMoveSuccess,
   updateMoveFail: updateMoveFail
 }

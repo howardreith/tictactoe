@@ -61,24 +61,24 @@ const getGameData = function () {
   })
 }
 
-const updateMove = function (id, index, gameValue) {
+const getThisGameData = function () {
   return $.ajax({
-    method: 'PATCH',
-    url: config.apiUrl + '/games' + id,
-    index: index,
-    gameValue: gameValue,
+    method: 'GET',
+    url: config.apiUrl + '/games/' + store.id,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
   })
 }
 
-// function that returns to the server on wins
-const onWin = function (id, data) {
+const updateMove = function (updateMoveObject) {
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/games' + id,
-    data: data
+    url: config.apiUrl + '/games/' + store.id,
+    data: updateMoveObject,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
@@ -90,5 +90,5 @@ module.exports = {
   createGame: createGame,
   getGameData: getGameData,
   updateMove: updateMove,
-  onWin: onWin
+  getThisGameData: getThisGameData
 }

@@ -1,6 +1,7 @@
 const getFormFields = require('../../lib/get-form-fields')
 const authUi = require('./ui.js')
 const api = require('./api.js')
+const store = require('./store.js')
 
 // Find a way to make a variable ++ based on the value of the html element
 // we created above.
@@ -53,12 +54,25 @@ const boxes = [
   }
 ]
 
+const updateMoveObject = {
+  'game': {
+    'cell': {
+      'index': '',
+      'value': ''
+    },
+    'over': false
+  }
+}
+
+console.log('updateMoveOject is ' + updateMoveObject)
+console.log('updateMoveObjects game is ' + updateMoveObject.game)
+console.log('updateMoveObjects cell is ' + updateMoveObject.game.cell)
+console.log('updateMoveObjects index is ' + updateMoveObject.game.cell.index)
+console.log('updateMoveObjects value is ' + updateMoveObject.game.cell.value)
+
 const onClick = function (event) {
   event.preventDefault()
-  // console.log('OMG A CLICK')
-  // console.log('event is' + this.id)
-  // console.log(typeof this.id)
-  round = round + 1
+  round = round + 1 // round tracker
   console.log('Round ' + round)
   console.log('Player 1 Wins: ' + player1Wins)
   console.log('Player 2 Wins: ' + player2Wins)
@@ -67,36 +81,10 @@ const onClick = function (event) {
     document.getElementById(this.id).innerHTML = 'x'
     const theNum = this.id.replace(/^\D+/g, '')
     boxes[theNum].value = 'x'
-    // On each click it needs to send to the server the index of the square
-    // which is theNum and the value of the square which is x in this case.
-    const onUpdateMove = function (event) {
-      const index = theNum
-      const gameValue = 'x'
-
-      api.updateMove(index, gameValue)
-        .then(authUi.updateMoveSuccess)
-        .catch(authUi.updateMoveFail)
-    }
-    module.export = {
-      onUpdateMove: onUpdateMove
-    }
-    // console.log('theNum is' + theNum + 'and boxes[theNum].value is' + boxes[theNum].value)
   } else if (round % 2 === 0) {
     document.getElementById(this.id).innerHTML = 'o'
     const theNum = this.id.replace(/^\D+/g, '')
     boxes[theNum].value = 'o'
-    // ditto here. Sending the index and value of the clicked squrae to server.
-    const onUpdateMove = function (event) {
-      const index = theNum
-      const gameValue = 'o'
-
-      api.updateMove(index, gameValue)
-        .then(authUi.updateMoveSuccess)
-        .catch(authUi.updateMoveFail)
-    }
-    module.export = {
-      onUpdateMove: onUpdateMove
-    }
   }
   if (boxes[0].value === 'x' && boxes[1].value === 'x' && boxes[2].value === 'x') {
     winner = 'Player 1'
@@ -391,38 +379,6 @@ const onClick = function (event) {
   }
 }
 
-// const onReset = function (event) {
-//   event.preventDefault()
-//   document.getElementById('box0').innerHTML = ' '
-//   document.getElementById('box1').innerHTML = ' '
-//   document.getElementById('box2').innerHTML = ' '
-//   document.getElementById('box3').innerHTML = ' '
-//   document.getElementById('box4').innerHTML = ' '
-//   document.getElementById('box5').innerHTML = ' '
-//   document.getElementById('box6').innerHTML = ' '
-//   document.getElementById('box7').innerHTML = ' '
-//   document.getElementById('box8').innerHTML = ' '
-//   $('#box0').one('click', onClick)
-//   $('#box1').one('click', onClick)
-//   $('#box2').one('click', onClick)
-//   $('#box3').one('click', onClick)
-//   $('#box4').one('click', onClick)
-//   $('#box5').one('click', onClick)
-//   $('#box6').one('click', onClick)
-//   $('#box7').one('click', onClick)
-//   $('#box8').one('click', onClick)
-//   boxes[0].value = null
-//   boxes[1].value = null
-//   boxes[2].value = null
-//   boxes[3].value = null
-//   boxes[4].value = null
-//   boxes[5].value = null
-//   boxes[6].value = null
-//   boxes[7].value = null
-//   boxes[8].value = null
-//   round = 0
-// }
-
 const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -457,6 +413,18 @@ const onSignOut = function (event) {
     .catch(authUi.signOutFail)
 }
 
+const onUpdateMove = function (updateMoveObject) {
+  console.log('onUpdateMove has been called!')
+  console.log('updateMoveObject is now' + updateMoveObject)
+  console.log('after setting cell to empty array, updateMoveObject.game.cell is ' + updateMoveObject.game.cell)
+
+  // ID=135 TOKEN="BAhJIiUwNmViMTViMDdlZGFmMmZiMjk0YzQxNjNjNDUxY2UzMAY6BkVG--e64ed808852358ceba321f7c825486e278846855" INDEX=0 VALUE='x' OVER=FALSE sh curl-scripts/addMove.sh
+
+  // api.updateMove()
+  //   .then(authUi.updateMoveSuccess)
+  //   .catch(authUi.updateMoveFail)
+}
+
 const onNewGame = function (event) {
   event.preventDefault()
   document.getElementById('box0').innerHTML = ' '
@@ -468,6 +436,15 @@ const onNewGame = function (event) {
   document.getElementById('box6').innerHTML = ' '
   document.getElementById('box7').innerHTML = ' '
   document.getElementById('box8').innerHTML = ' '
+  $('#box0').off('click', onClick)
+  $('#box1').off('click', onClick)
+  $('#box2').off('click', onClick)
+  $('#box3').off('click', onClick)
+  $('#box4').off('click', onClick)
+  $('#box5').off('click', onClick)
+  $('#box6').off('click', onClick)
+  $('#box7').off('click', onClick)
+  $('#box8').off('click', onClick)
   $('#box0').one('click', onClick)
   $('#box1').one('click', onClick)
   $('#box2').one('click', onClick)
@@ -499,11 +476,11 @@ const onGetGameData = function (event) {
     .catch(authUi.getGameDataFail)
 }
 
-const onUpdateMove = function (event) {
+const onGetThisGameData = function (event) {
   event.preventDefault()
-  api.updateMove()
-    .then(authUi.updateMoveSuccess)
-    .catch(authUi.updateMoveFail)
+  api.getThisGameData()
+    .then(authUi.getThisGameDataSuccess)
+    .catch(authUi.getThisGameDataFail)
 }
 
 module.exports = {
@@ -514,5 +491,7 @@ module.exports = {
   onSignOut: onSignOut,
   onNewGame: onNewGame,
   onGetGameData: onGetGameData,
-  onUpdateMove: onUpdateMove
+  onUpdateMove: onUpdateMove,
+  onGetThisGameData: onGetThisGameData,
+  updateMoveObject: updateMoveObject
 }
