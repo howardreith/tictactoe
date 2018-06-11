@@ -53,7 +53,7 @@ const boxes = [
   }
 ]
 
-let updateMoveObject = {
+const updateMoveObject = {
   'game': {
     'cell': {
       'index': '',
@@ -429,16 +429,21 @@ const onSignOut = function (event) {
     .catch(authUi.signOutFail)
 }
 
-const onUpdateMove = function () {
-  updateMoveObject.game.cell.index = 0
-  updateMoveObject.game.cell.value = 'x'
-  console.log('onUpdateMove has been called!')
-  console.log('updateMoveObject is now' + updateMoveObject)
-  console.log('index is now' + updateMoveObject.game.cell.index)
-  console.log('value is now' + updateMoveObject.game.cell.value)
+let thisRound = 0
 
-  // ID=135 TOKEN="BAhJIiUwNmViMTViMDdlZGFmMmZiMjk0YzQxNjNjNDUxY2UzMAY6BkVG--e64ed808852358ceba321f7c825486e278846855" INDEX=0 VALUE='x' OVER=FALSE sh curl-scripts/addMove.sh
-
+const onUpdateMove = function (event) {
+  thisRound = thisRound + 1
+  if (thisRound % 2 === 1) {
+    const theNum = this.id.replace(/^\D+/g, '')
+    updateMoveObject.game.cell.index = theNum
+    updateMoveObject.game.cell.value = 'x'
+    console.log('The new values are ' + updateMoveObject.game.cell.index + updateMoveObject.game.cell.value)
+  } else if (thisRound % 2 === 0) {
+    const theNum = this.id.replace(/^\D+/g, '')
+    updateMoveObject.game.cell.index = theNum
+    updateMoveObject.game.cell.value = 'o'
+    console.log('The new values are ' + updateMoveObject.game.cell.index + updateMoveObject.game.cell.value)
+  }
   api.updateMove(updateMoveObject)
     .then(authUi.updateMoveSuccess)
     .catch(authUi.updateMoveFail)
@@ -483,6 +488,7 @@ const onNewGame = function (event) {
   boxes[7].value = null
   boxes[8].value = null
   round = 0
+  thisRound = 0
   api.createGame()
     .then(authUi.createGameSuccess)
     .catch(authUi.createGameFail)
