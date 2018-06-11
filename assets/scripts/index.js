@@ -33,4 +33,5 @@ $(() => {
   $('#sign-out').hide()
   $('#sign-up-form').hide()
   $('#get-sign-up').on('click', events.onShowSignUp)
+  $('#get-user-stats').on('click', events.onGetUserStats)
 })

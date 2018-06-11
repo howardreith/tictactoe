@@ -76,6 +76,16 @@ const getThisGameDataFail = function (error) {
   console.log('Error is ', error)
 }
 
+const getUserGameDataSuccess = function (getUserGameDataSuccess) {
+  console.log('getUserGameDataSuccess is', getUserGameDataSuccess)
+  store.userData = getUserGameDataSuccess
+  console.log('userData is ' + store.userData.games)
+}
+
+const getUserGameDataFail = function (error) {
+  console.log('Error is ', error)
+}
+
 const updateMoveSuccess = function (updateMoveResponse) {
   console.log('updateMoveResonse is', updateMoveResponse)
 }
@@ -102,5 +112,7 @@ module.exports = {
   getThisGameDataSuccess: getThisGameDataSuccess,
   getThisGameDataFail: getThisGameDataFail,
   updateMoveSuccess: updateMoveSuccess,
-  updateMoveFail: updateMoveFail
+  updateMoveFail: updateMoveFail,
+  getUserGameDataSuccess: getUserGameDataSuccess,
+  getUserGameDataFail: getUserGameDataFail
 }

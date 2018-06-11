@@ -71,6 +71,16 @@ const getThisGameData = function () {
   })
 }
 
+const getUserGameData = function () {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/games/?player_x' + store.user.email,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const updateMove = function (updateMoveObject) {
   return $.ajax({
     method: 'PATCH',
@@ -90,5 +100,6 @@ module.exports = {
   createGame: createGame,
   getGameData: getGameData,
   updateMove: updateMove,
-  getThisGameData: getThisGameData
+  getThisGameData: getThisGameData,
+  getUserGameData: getUserGameData
 }
