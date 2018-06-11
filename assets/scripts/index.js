@@ -29,4 +29,8 @@ $(() => {
   $('#box6').on('click', events.onUpdateMove)
   $('#box7').on('click', events.onUpdateMove)
   $('#box8').on('click', events.onUpdateMove)
+  $('#change-password-form').hide()
+  $('#sign-out').hide()
+  $('#sign-up-form').hide()
+  $('#get-sign-up').on('click', events.onShowSignUp)
 })

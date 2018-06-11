@@ -1,7 +1,6 @@
 const getFormFields = require('../../lib/get-form-fields')
 const authUi = require('./ui.js')
 const api = require('./api.js')
-const store = require('./store.js')
 
 // Find a way to make a variable ++ based on the value of the html element
 // we created above.
@@ -54,7 +53,7 @@ const boxes = [
   }
 ]
 
-const updateMoveObject = {
+let updateMoveObject = {
   'game': {
     'cell': {
       'index': '',
@@ -382,15 +381,29 @@ const onClick = function (event) {
 const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  $('#sign-out').show()
+  $('#change-password-form').show()
+  $('#sign-up-form').hide()
 
   api.signUp(data)
     .then(authUi.signUpSuccess)
     .catch(authUi.signUpError)
 }
 
+const onShowSignUp = function (event) {
+  event.preventDefault()
+  $('#sign-up-form').show()
+  $('#get-sign-up').hide()
+  $('#sign-in-form').hide()
+}
+
 const onSignIn = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  $('#change-password-form').show()
+  $('#sign-in-form').hide()
+  $('#get-sign-up').hide()
+  $('#sign-out').show()
 
   api.signIn(data)
     .then(authUi.signInSuccess)
@@ -408,34 +421,40 @@ const onChangePassword = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
+  $('#sign-in-form').show()
+  $('#get-sign-up').show()
+  $('#sign-out').hide()
   api.signOut()
     .then(authUi.signOutSuccess)
     .catch(authUi.signOutFail)
 }
 
-const onUpdateMove = function (updateMoveObject) {
+const onUpdateMove = function () {
+  updateMoveObject.game.cell.index = 0
+  updateMoveObject.game.cell.value = 'x'
   console.log('onUpdateMove has been called!')
   console.log('updateMoveObject is now' + updateMoveObject)
-  console.log('after setting cell to empty array, updateMoveObject.game.cell is ' + updateMoveObject.game.cell)
+  console.log('index is now' + updateMoveObject.game.cell.index)
+  console.log('value is now' + updateMoveObject.game.cell.value)
 
   // ID=135 TOKEN="BAhJIiUwNmViMTViMDdlZGFmMmZiMjk0YzQxNjNjNDUxY2UzMAY6BkVG--e64ed808852358ceba321f7c825486e278846855" INDEX=0 VALUE='x' OVER=FALSE sh curl-scripts/addMove.sh
 
-  // api.updateMove()
-  //   .then(authUi.updateMoveSuccess)
-  //   .catch(authUi.updateMoveFail)
+  api.updateMove(updateMoveObject)
+    .then(authUi.updateMoveSuccess)
+    .catch(authUi.updateMoveFail)
 }
 
 const onNewGame = function (event) {
   event.preventDefault()
-  document.getElementById('box0').innerHTML = ' '
-  document.getElementById('box1').innerHTML = ' '
-  document.getElementById('box2').innerHTML = ' '
-  document.getElementById('box3').innerHTML = ' '
-  document.getElementById('box4').innerHTML = ' '
-  document.getElementById('box5').innerHTML = ' '
-  document.getElementById('box6').innerHTML = ' '
-  document.getElementById('box7').innerHTML = ' '
-  document.getElementById('box8').innerHTML = ' '
+  document.getElementById('box0').innerHTML = ''
+  document.getElementById('box1').innerHTML = ''
+  document.getElementById('box2').innerHTML = ''
+  document.getElementById('box3').innerHTML = ''
+  document.getElementById('box4').innerHTML = ''
+  document.getElementById('box5').innerHTML = ''
+  document.getElementById('box6').innerHTML = ''
+  document.getElementById('box7').innerHTML = ''
+  document.getElementById('box8').innerHTML = ''
   $('#box0').off('click', onClick)
   $('#box1').off('click', onClick)
   $('#box2').off('click', onClick)
@@ -493,5 +512,6 @@ module.exports = {
   onGetGameData: onGetGameData,
   onUpdateMove: onUpdateMove,
   onGetThisGameData: onGetThisGameData,
-  updateMoveObject: updateMoveObject
+  updateMoveObject: updateMoveObject,
+  onShowSignUp: onShowSignUp
 }
