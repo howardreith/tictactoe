@@ -1,5 +1,6 @@
 'use strict'
 const store = require('./store')
+const api = require('./api.js')
 
 const clickSuccess = function (clickResponse) {
   console.log('Click is', clickResponse)
@@ -38,6 +39,11 @@ const signInSuccess = function (signInResponse) {
   $('#get-sign-up').hide()
   $('#sign-out').show()
   $('signup-succes').hide()
+  $('#user-email').text(store.user.email)
+
+  api.createGame()
+    .then(createGameSuccess)
+    .catch(createGameFail)
 }
 
 const signInError = function (error) {
@@ -101,6 +107,14 @@ const getUserGameDataSuccess = function (getUserGameDataSuccess) {
   console.log('getUserGameDataSuccess is', getUserGameDataSuccess)
   store.userData = getUserGameDataSuccess
   console.log('userData is ' + store.userData.games)
+  $('#games-played').text('Games played: ' + store.userData.games.length)
+  let finishedGames = 0
+  for (let i = 0; i < store.userData.games.length; i++) {
+    if (store.userData.games[i].over === true) {
+      finishedGames++
+    }
+  }
+  $('#games-completed').text('Games completed: ' + finishedGames)
 }
 
 const getUserGameDataFail = function (error) {
