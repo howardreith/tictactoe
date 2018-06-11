@@ -11,6 +11,53 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   margin: auto;
 }
 
+h1 {
+  text-align: center;
+}
+
+#the-game {
+  position: absolute;
+  left: 20%;
+  right: auto;
+}
+
+.change-confirmation {
+  color: yellow;
+  float: right;
+}
+
+.invalid-credentials {
+  color: yellow;
+  float: right;
+}
+
+.passwords-match {
+  color: yellow;
+  float: right;
+}
+
+.email-taken {
+  color: yellow;
+  float: right;
+}
+
+.signup-success {
+  color: yellow;
+  float: right;
+}
+
+.user-stats {
+  background-color: blue;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+}
+
+#sign-up-back {
+  float: right;
+  clear: right;
+}
+
 .sign-in-password {
   float: right;
 }
@@ -48,6 +95,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .change-password-button {
+  float: right;
+}
+
+#get-change-password {
   float: right;
 }
 

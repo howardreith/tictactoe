@@ -63,12 +63,6 @@ const updateMoveObject = {
   }
 }
 
-console.log('updateMoveOject is ' + updateMoveObject)
-console.log('updateMoveObjects game is ' + updateMoveObject.game)
-console.log('updateMoveObjects cell is ' + updateMoveObject.game.cell)
-console.log('updateMoveObjects index is ' + updateMoveObject.game.cell.index)
-console.log('updateMoveObjects value is ' + updateMoveObject.game.cell.value)
-
 const onClick = function (event) {
   event.preventDefault()
   round = round + 1 // round tracker
@@ -466,9 +460,6 @@ const onClick = function (event) {
 const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  $('#sign-out').show()
-  $('#change-password-form').show()
-  $('#sign-up-form').hide()
 
   api.signUp(data)
     .then(authUi.signUpSuccess)
@@ -480,15 +471,30 @@ const onShowSignUp = function (event) {
   $('#sign-up-form').show()
   $('#get-sign-up').hide()
   $('#sign-in-form').hide()
+  $('.signup-success').hide()
+  $('#sign-up-back').show()
 }
 
+const onGetChangePassword = function (event) {
+  event.preventDefault()
+  $('#change-password-form').show()
+  $('#get-change-password').hide()
+  $('#sign-out').hide()
+  $('.change-confirmation').hide()
+}
+
+const onSignUpBack = function (event) {
+  event.preventDefault()
+  $('#sign-up-form').hide()
+  $('#sign-in-form').show()
+  $('#get-sign-up').show()
+  $('#sign-up-back').hide()
+}
+
+// Need to reject sign in if they're invalid.
 const onSignIn = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  $('#change-password-form').show()
-  $('#sign-in-form').hide()
-  $('#get-sign-up').hide()
-  $('#sign-out').show()
 
   api.signIn(data)
     .then(authUi.signInSuccess)
@@ -506,9 +512,6 @@ const onChangePassword = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-  $('#sign-in-form').show()
-  $('#get-sign-up').show()
-  $('#sign-out').hide()
   api.signOut()
     .then(authUi.signOutSuccess)
     .catch(authUi.signOutFail)
@@ -600,8 +603,10 @@ const onGetUserStats = function (event) {
     .catch(authUi.getUserGameDataFail)
 }
 
-let playerXScore = 0
-let playerOScore = 0
+// let playerXScore = 0
+// let playerOScore = 0
+//
+// console.log('userdata is ' + store.userData.game[1][1])
 
 // for (i=0; i<store.userData.games.length; I++) {
 //   if (store.userData.games[i] === [["", "", "", "", "", "", "", "", ""]])
@@ -619,5 +624,7 @@ module.exports = {
   onGetThisGameData: onGetThisGameData,
   updateMoveObject: updateMoveObject,
   onShowSignUp: onShowSignUp,
-  onGetUserStats: onGetUserStats
+  onGetUserStats: onGetUserStats,
+  onGetChangePassword: onGetChangePassword,
+  onSignUpBack: onSignUpBack
 }

@@ -11,39 +11,60 @@ const clickError = function (error) {
 
 const signUpSuccess = function (signUpResponse) {
   console.log('signUpResponse is', signUpResponse)
+  $('#sign-in-form').show()
+  $('#get-sign-up').show()
+  $('#sign-up-form').hide()
+  $('.signup-success').show()
+  $('.signup-success').text('Thank you ' + signUpResponse.user.email + '. Please sign in.')
 }
 
 const signUpError = function (error) {
-  console.log('Error is ', error)
+  // const response = string(error.responseText)
+  // console.log('response is ' + response)
+  if (error.responseText === '{"email":["has already been taken"]}') {
+    $('.email-taken').show()
+    console.log('Email has been taken')
+  } else {
+    $('.passwords-match').show()
+    console.log('Passwords do not match')
+  }
 }
 
 const signInSuccess = function (signInResponse) {
   console.log('signInResponse is', signInResponse)
   store.user = signInResponse.user
-  $('#content').html('')
-  const userHtml = (`
-    <h4>Welcome ${signInResponse.user.email}</h4>`)
-  $('#content').append(userHtml)
+  $('#get-change-password').show()
+  $('#sign-in-form').hide()
+  $('#get-sign-up').hide()
+  $('#sign-out').show()
+  $('signup-succes').hide()
 }
 
 const signInError = function (error) {
   console.log('Error is ', error)
+  $('.invalid-credentials').show()
 }
 
 const changePasswordSuccess = function (changePasswordResponse) {
   console.log('changePasswordResponse is', changePasswordResponse)
+  $('#change-password-form').hide()
+  $('#sign-out').show()
+  $('#get-change-password').show()
+  $('.change-confirmation').show()
 }
 
 const changePasswordError = function (error) {
-  console.log('Error is ', error)
+  console.log('Error is ' + error)
 }
 
 const signOutSuccess = function (signOutResponse) {
   console.log('signOutResponse is', signOutResponse)
-  $('#content').html('')
-  const userHtml = (`
-    <h4>Goodbye</h4>`)
-  $('#content').append(userHtml)
+  $('#sign-in-form').show()
+  $('#get-sign-up').show()
+  $('#sign-out').hide()
+  $('.invalid-credentials').hide()
+  $('#get-change-password').hide()
+  $('.change-confirmation').hide()
 }
 
 const signOutError = function (error) {
