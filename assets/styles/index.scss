@@ -46,6 +46,11 @@ h1 {
   float: right;
 }
 
+.enter-email {
+  color: yellow;
+  float: right;
+}
+
 .user-stats {
   background-color: blue;
   margin-left: 20%;
@@ -53,9 +58,22 @@ h1 {
   text-align: center;
 }
 
+.scoreboard {
+  text-align: center;
+}
+
 #sign-up-back {
   float: right;
   clear: right;
+}
+
+#change-password-back {
+  float: right;
+  clear: right;
+}
+
+#reset-score {
+  clear: both;
 }
 
 .sign-in-password {

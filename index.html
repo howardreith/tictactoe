@@ -38,6 +38,7 @@
               <input name="credentials[email]" class = "sign-up-email" placeholder="Sign Up - Email" type="text">
               <p class="passwords-match">Passwords do not match </p>
               <p class="email-taken">Email is already taken </p>
+              <p class="enter-email">Please enter your information </p>
             </form>
               <button id="sign-up-back">Back</button>
             <form id="change-password-form">
@@ -45,6 +46,7 @@
               <input name="passwords[new]" class="change-password-new" placeholder="New Password" type="text">
               <input name="passwords[old]" class="change-password-old" placeholder="Old Password" type="text">
             </form>
+              <button id="change-password-back">Back</button>
               <p class="change-confirmation"> Password Changed </p>
             <section>
               <button id='sign-out'>Sign Out</button>
@@ -68,6 +70,13 @@
         </ul>
       </div>
 
+      <div class='scoreboard'>
+        <h3>Score Board</h3>
+        <h4 id="playerXScore">Player X: 0</h4>
+        <h4 id="drawScore">Draws: 0</h4>
+        <h4 id="playerOScore">Player O: 0</h4>
+      </div>
+
       <div id="the-game">
       <div class="row">
         <div class="col-xs-4 box" id="box0">Box 0</div>
@@ -85,6 +94,8 @@
         <div class="col-xs-4 box" id="box8">Box 8</div>
       </div>
     </div>
+
+    <button id="reset-score">Reset Score</button>
 
     </body>
 </html>

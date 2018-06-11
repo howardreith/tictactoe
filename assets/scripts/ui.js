@@ -17,18 +17,17 @@ const signUpSuccess = function (signUpResponse) {
   $('#sign-up-form').hide()
   $('.signup-success').show()
   $('.signup-success').text('Thank you ' + signUpResponse.user.email + '. Please sign in.')
+  document.getElementById('sign-up-form').reset()
 }
 
 const signUpError = function (error) {
-  // const response = string(error.responseText)
-  // console.log('response is ' + response)
+  console.log('Error is ' + error)
   if (error.responseText === '{"email":["has already been taken"]}') {
     $('.email-taken').show()
-    console.log('Email has been taken')
   } else {
     $('.passwords-match').show()
-    console.log('Passwords do not match')
   }
+  document.getElementById('sign-up-form').reset()
 }
 
 const signInSuccess = function (signInResponse) {
@@ -40,6 +39,7 @@ const signInSuccess = function (signInResponse) {
   $('#sign-out').show()
   $('signup-succes').hide()
   $('#user-email').text(store.user.email)
+  document.getElementById('sign-in-form').reset()
 
   api.createGame()
     .then(createGameSuccess)
@@ -49,6 +49,7 @@ const signInSuccess = function (signInResponse) {
 const signInError = function (error) {
   console.log('Error is ', error)
   $('.invalid-credentials').show()
+  document.getElementById('sign-in-form').reset()
 }
 
 const changePasswordSuccess = function (changePasswordResponse) {
@@ -56,11 +57,13 @@ const changePasswordSuccess = function (changePasswordResponse) {
   $('#change-password-form').hide()
   $('#sign-out').show()
   $('#get-change-password').show()
-  $('.change-confirmation').show()
+  $('.change-confirmation').show().fadeout(250)
+  document.getElementById('change-password-form').reset()
 }
 
 const changePasswordError = function (error) {
   console.log('Error is ' + error)
+  document.getElementById('change-password-form').reset()
 }
 
 const signOutSuccess = function (signOutResponse) {
@@ -71,10 +74,12 @@ const signOutSuccess = function (signOutResponse) {
   $('.invalid-credentials').hide()
   $('#get-change-password').hide()
   $('.change-confirmation').hide()
+  document.getElementById('sign-out-form').reset()
 }
 
 const signOutError = function (error) {
   console.log('Error is ', error)
+  document.getElementById('sign-out-form').reset()
 }
 
 const createGameSuccess = function (createGameResponse) {

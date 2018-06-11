@@ -42,4 +42,8 @@ $(() => {
   $('.email-taken').hide()
   $('#sign-up-back').hide()
   $('#sign-up-back').on('click', events.onSignUpBack)
+  $('.enter-email').hide()
+  $('#change-password-back').hide()
+  $('#change-password-back').on('click', events.onChangePasswordBack)
+  $('#reset-score').on('click', events.onResetScore)
 })

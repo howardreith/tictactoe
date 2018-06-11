@@ -99,6 +99,9 @@ const onClick = function (event) {
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
       console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      $('#playerXScore').text('Player X: ' + player1Wins)
+      $('#playerOScore').text('Player O: ' + player2Wins)
+      $('#drawScore').text('Draws: ' + draws)
     }
     // Need to add function that notifies server of win.
     return player1Wins
@@ -122,6 +125,9 @@ const onClick = function (event) {
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
       console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      $('#playerXScore').text('Player X: ' + player1Wins)
+      $('#playerOScore').text('Player O: ' + player2Wins)
+      $('#drawScore').text('Draws: ' + draws)
     }
     return player1Wins
   } else if (boxes[6].value === 'x' && boxes[7].value === 'x' && boxes[8].value === 'x') {
@@ -144,6 +150,9 @@ const onClick = function (event) {
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
       console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      $('#playerXScore').text('Player X: ' + player1Wins)
+      $('#playerOScore').text('Player O: ' + player2Wins)
+      $('#drawScore').text('Draws: ' + draws)
     }
     return player1Wins
   } else if (boxes[0].value === 'x' && boxes[3].value === 'x' && boxes[6].value === 'x') {
@@ -166,6 +175,9 @@ const onClick = function (event) {
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
       console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      $('#playerXScore').text('Player X: ' + player1Wins)
+      $('#playerOScore').text('Player O: ' + player2Wins)
+      $('#drawScore').text('Draws: ' + draws)
     }
     return player1Wins
   } else if (boxes[1].value === 'x' && boxes[4].value === 'x' && boxes[7].value === 'x') {
@@ -188,6 +200,9 @@ const onClick = function (event) {
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
       console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      $('#playerXScore').text('Player X: ' + player1Wins)
+      $('#playerOScore').text('Player O: ' + player2Wins)
+      $('#drawScore').text('Draws: ' + draws)
     }
     return player1Wins
   } else if (boxes[2].value === 'x' && boxes[5].value === 'x' && boxes[8].value === 'x') {
@@ -210,6 +225,9 @@ const onClick = function (event) {
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
       console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      $('#playerXScore').text('Player X: ' + player1Wins)
+      $('#playerOScore').text('Player O: ' + player2Wins)
+      $('#drawScore').text('Draws: ' + draws)
     }
     return player1Wins
   } else if (boxes[0].value === 'x' && boxes[4].value === 'x' && boxes[8].value === 'x') {
@@ -232,6 +250,9 @@ const onClick = function (event) {
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
       console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      $('#playerXScore').text('Player X: ' + player1Wins)
+      $('#playerOScore').text('Player O: ' + player2Wins)
+      $('#drawScore').text('Draws: ' + draws)
     }
     return player1Wins
   } else if (boxes[2].value === 'x' && boxes[4].value === 'x' && boxes[6].value === 'x') {
@@ -254,6 +275,9 @@ const onClick = function (event) {
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
       console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      $('#playerXScore').text('Player X: ' + player1Wins)
+      $('#playerOScore').text('Player O: ' + player2Wins)
+      $('#drawScore').text('Draws: ' + draws)
     }
     return player1Wins
   } else if (boxes[0].value === 'o' && boxes[1].value === 'o' && boxes[2].value === 'o') {
@@ -276,6 +300,9 @@ const onClick = function (event) {
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
       console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      $('#playerXScore').text('Player X: ' + player1Wins)
+      $('#playerOScore').text('Player O: ' + player2Wins)
+      $('#drawScore').text('Draws: ' + draws)
     }
     return player2Wins
   } else if (boxes[3].value === 'o' && boxes[4].value === 'o' && boxes[5].value === 'o') {
@@ -298,6 +325,9 @@ const onClick = function (event) {
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
       console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      $('#playerXScore').text('Player X: ' + player1Wins)
+      $('#playerOScore').text('Player O: ' + player2Wins)
+      $('#drawScore').text('Draws: ' + draws)
     }
     return player2Wins
   } else if (boxes[6].value === 'o' && boxes[7].value === 'o' && boxes[8].value === 'o') {
@@ -320,6 +350,9 @@ const onClick = function (event) {
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
       console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      $('#playerXScore').text('Player X: ' + player1Wins)
+      $('#playerOScore').text('Player O: ' + player2Wins)
+      $('#drawScore').text('Draws: ' + draws)
     }
     return player2Wins
   } else if (boxes[0].value === 'o' && boxes[3].value === 'o' && boxes[6].value === 'o') {
@@ -342,6 +375,9 @@ const onClick = function (event) {
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
       console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      $('#playerXScore').text('Player X: ' + player1Wins)
+      $('#playerOScore').text('Player O: ' + player2Wins)
+      $('#drawScore').text('Draws: ' + draws)
     }
     return player2Wins
   } else if (boxes[1].value === 'o' && boxes[4].value === 'o' && boxes[7].value === 'o') {
@@ -364,6 +400,9 @@ const onClick = function (event) {
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
       console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      $('#playerXScore').text('Player X: ' + player1Wins)
+      $('#playerOScore').text('Player O: ' + player2Wins)
+      $('#drawScore').text('Draws: ' + draws)
     }
     return player2Wins
   } else if (boxes[2].value === 'o' && boxes[5].value === 'o' && boxes[8].value === 'o') {
@@ -386,6 +425,9 @@ const onClick = function (event) {
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
       console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      $('#playerXScore').text('Player X: ' + player1Wins)
+      $('#playerOScore').text('Player O: ' + player2Wins)
+      $('#drawScore').text('Draws: ' + draws)
     }
     return player2Wins
   } else if (boxes[0].value === 'o' && boxes[4].value === 'o' && boxes[8].value === 'o') {
@@ -408,6 +450,9 @@ const onClick = function (event) {
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
       console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      $('#playerXScore').text('Player X: ' + player1Wins)
+      $('#playerOScore').text('Player O: ' + player2Wins)
+      $('#drawScore').text('Draws: ' + draws)
     }
     return player2Wins
   } else if (boxes[2].value === 'o' && boxes[4].value === 'o' && boxes[6].value === 'o') {
@@ -430,6 +475,9 @@ const onClick = function (event) {
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
       console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      $('#playerXScore').text('Player X: ' + player1Wins)
+      $('#playerOScore').text('Player O: ' + player2Wins)
+      $('#drawScore').text('Draws: ' + draws)
     }
     return player2Wins
   } else if (round > 8) {
@@ -452,6 +500,9 @@ const onClick = function (event) {
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
       console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      $('#playerXScore').text('Player X: ' + player1Wins)
+      $('#playerOScore').text('Player O: ' + player2Wins)
+      $('#drawScore').text('Draws: ' + draws)
     }
     return draws
   }
@@ -460,6 +511,8 @@ const onClick = function (event) {
 const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  $('.passwords-match').hide()
+  $('.email-taken').hide()
 
   api.signUp(data)
     .then(authUi.signUpSuccess)
@@ -473,6 +526,10 @@ const onShowSignUp = function (event) {
   $('#sign-in-form').hide()
   $('.signup-success').hide()
   $('#sign-up-back').show()
+  $('.email-taken').hide()
+  $('.passwords-match').hide()
+  $('.invalid-credentials').hide()
+  document.getElementById('sign-in-form').reset()
 }
 
 const onGetChangePassword = function (event) {
@@ -481,6 +538,18 @@ const onGetChangePassword = function (event) {
   $('#get-change-password').hide()
   $('#sign-out').hide()
   $('.change-confirmation').hide()
+  $('#change-password-back').show()
+  document.getElementById('change-password-form').reset()
+}
+
+const onChangePasswordBack = function (event) {
+  event.preventDefault()
+  $('#change-password-form').hide()
+  $('#get-change-password').show()
+  $('#sign-out').show()
+  $('.change-confirmation').hide()
+  $('#change-password-back').hide()
+  document.getElementById('change-password-form').reset()
 }
 
 const onSignUpBack = function (event) {
@@ -489,6 +558,10 @@ const onSignUpBack = function (event) {
   $('#sign-in-form').show()
   $('#get-sign-up').show()
   $('#sign-up-back').hide()
+  $('.email-taken').hide()
+  $('.passwords-match').hide()
+  $('.invalid-credentials').hide()
+  document.getElementById('sign-up-form').reset()
 }
 
 // Need to reject sign in if they're invalid.
@@ -603,6 +676,16 @@ const onGetUserStats = function (event) {
     .catch(authUi.getUserGameDataFail)
 }
 
+const onResetScore = function (event) {
+  event.preventDefault()
+  player1Wins = 0
+  player2Wins = 0
+  draws = 0
+  $('#playerXScore').text('Player X: ' + player1Wins)
+  $('#playerOScore').text('Player O: ' + player2Wins)
+  $('#drawScore').text('Draws: ' + draws)
+}
+
 // let playerXScore = 0
 // let playerOScore = 0
 //
@@ -626,5 +709,7 @@ module.exports = {
   onShowSignUp: onShowSignUp,
   onGetUserStats: onGetUserStats,
   onGetChangePassword: onGetChangePassword,
-  onSignUpBack: onSignUpBack
+  onSignUpBack: onSignUpBack,
+  onChangePasswordBack: onChangePasswordBack,
+  onResetScore: onResetScore
 }
