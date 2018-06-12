@@ -38,7 +38,9 @@ const signInSuccess = function (signInResponse) {
   $('#get-sign-up').hide()
   $('#sign-out').show()
   $('signup-succes').hide()
-  $('#user-email').text(store.user.email)
+  $('#user-email').text('Email: ' + store.user.email)
+  $('#newGame').show()
+  $('.please-sign-in').hide()
   document.getElementById('sign-in-form').reset()
 
   api.createGame()
@@ -57,8 +59,9 @@ const changePasswordSuccess = function (changePasswordResponse) {
   $('#change-password-form').hide()
   $('#sign-out').show()
   $('#get-change-password').show()
-  $('.change-confirmation').show().fadeout(250)
+  $('.change-confirmation').show()
   document.getElementById('change-password-form').reset()
+  $('#change-password-back').hide()
 }
 
 const changePasswordError = function (error) {
@@ -74,6 +77,13 @@ const signOutSuccess = function (signOutResponse) {
   $('.invalid-credentials').hide()
   $('#get-change-password').hide()
   $('.change-confirmation').hide()
+  $('.play-area').hide()
+  $('.scoreboard').hide()
+  $('#reset-score').hide()
+  $('.user-stats').hide()
+  $('#get-user-stats').hide()
+  $('#newGame').hide()
+  $('.please-sign-in').show()
   document.getElementById('sign-out-form').reset()
 }
 
@@ -86,6 +96,11 @@ const createGameSuccess = function (createGameResponse) {
   console.log('createGameResponse is', createGameResponse)
   store.id = createGameResponse.game.id
   console.log('store.id is' + store.id)
+  $('.play-area').show()
+  $('.scoreboard').show()
+  $('#reset-score').show()
+  $('.user-stats').show()
+  $('#get-user-stats').show()
 }
 
 const createGameFail = function (error) {

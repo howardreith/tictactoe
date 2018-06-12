@@ -738,6 +738,12 @@ const onChangePassword = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
+  player1Wins = 0
+  player2Wins = 0
+  draws = 0
+  $('#playerXScore').text('Player X: ' + player1Wins)
+  $('#playerOScore').text('Player O: ' + player2Wins)
+  $('#drawScore').text('Draws: ' + draws)
   api.signOut()
     .then(authUi.signOutSuccess)
     .catch(authUi.signOutFail)

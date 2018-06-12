@@ -10,9 +10,14 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   border-style: solid;
   margin: auto;
   background-color: white;
-  font-size: 90px;
+  font-size: 120px;
   text-align: center;
   vertical-align: middle;
+  line-height: 200px;
+}
+
+.navbar {
+  background-color: #003366;
 }
 
 .scoreboard {
@@ -32,9 +37,19 @@ h1 {
   font-size: 70px;
 }
 
+h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+}
+
 h3 {
   font-size: 40px;
   font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
 }
 
 #playerXScore {
@@ -59,31 +74,28 @@ body {
 }
 
 #newGame {
-margin: 0 auto;
-background: #4162a8;
-border-top: 1px solid #38538c;
-border-right: 1px solid #1f2d4d;
-border-bottom: 1px solid #151e33;
-border-left: 1px solid #1f2d4d;
-border-radius: 4px;
--webkit-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
-color: #fff;
-font: bold 20px/1 "helvetica neue", helvetica, arial, sans-serif;
-margin-bottom: 10px;
-padding: 10px 0 12px 0;
-text-align: center;
-text-shadow: 0 -1px 1px #1e2d4d;
-width: 250px;
--webkit-background-clip: padding-box; }
-button.punch:hover {
-  -webkit-box-shadow: inset 0 0 20px 1px #87adff, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
-  box-shadow: inset 0 0 20px 1px #87adff, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
-  cursor: pointer; }
-button.punch:active {
-  -webkit-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111111;
-  box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111111;
-  margin-top: 58px; }
+    background: #4162a8;
+    border-top: 1px solid #38538c;
+    border-right: 1px solid #1f2d4d;
+    border-bottom: 1px solid #151e33;
+    border-left: 1px solid #1f2d4d;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
+    box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
+    color: #fff;
+    font: bold 20px/1 "helvetica neue", helvetica, arial, sans-serif;
+    margin-bottom: 10px;
+    padding: 10px 0 12px 0;
+    text-align: center;
+    text-shadow: 0 -1px 1px #1e2d4d;
+    width: 300px;
+    -webkit-background-clip: padding-box; }
+    #newGame:hover {
+      -webkit-box-shadow: inset 0 0 20px 1px #87adff, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
+      box-shadow: inset 0 0 20px 1px #87adff, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
+      cursor: pointer;
+    }
+
 
 #reset-score {
   background-color: #8c9cbf;
@@ -105,7 +117,7 @@ button.punch:active {
   text-align: center;
   text-shadow: 0 -1px 1px #000f4d;
   width: 150px; }
-  button:hover {
+  #reset-score:hover {
     background-color: #7f8dad;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7f8dad), color-stop(50%, #4a5e8c), color-stop(50%, #2f477d), color-stop(100%, #364c80));
     background-image: -webkit-linear-gradient(top, #7f8dad 0%, #4a5e8c 50%, #2f477d 50%, #364c80 100%);
@@ -114,9 +126,91 @@ button.punch:active {
     background-image: -o-linear-gradient(top, #7f8dad 0%, #4a5e8c 50%, #2f477d 50%, #364c80 100%);
     background-image: linear-gradient(top, #7f8dad 0%, #4a5e8c 50%, #2f477d 50%, #364c80 100%);
     cursor: pointer; }
-  button:active {
+  #reset-score:active {
     -webkit-box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 white;
     box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 white; }
+
+    #get-user-stats {
+      background-color: #8c9cbf;
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8c9cbf), color-stop(50%, #546a9e), color-stop(50%, #36518f), color-stop(100%, #3d5691));
+      background-image: -webkit-linear-gradient(top, #8c9cbf 0%, #546a9e 50%, #36518f 50%, #3d5691 100%);
+      background-image: -moz-linear-gradient(top, #8c9cbf 0%, #546a9e 50%, #36518f 50%, #3d5691 100%);
+      background-image: -ms-linear-gradient(top, #8c9cbf 0%, #546a9e 50%, #36518f 50%, #3d5691 100%);
+      background-image: -o-linear-gradient(top, #8c9cbf 0%, #546a9e 50%, #36518f 50%, #3d5691 100%);
+      background-image: linear-gradient(top, #8c9cbf 0%, #546a9e 50%, #36518f 50%, #3d5691 100%);
+      border: 1px solid #172d6e;
+      border-bottom: 1px solid #0e1d45;
+      border-radius: 5px;
+      -webkit-box-shadow: inset 0 1px 0 0 #b1b9cb;
+      box-shadow: inset 0 1px 0 0 #b1b9cb;
+      color: #fff;
+      font: bold 16px/1 "helvetica neue", helvetica, arial, sans-serif;
+      padding: 7px 0 8px 0;
+      text-decoration: none;
+      text-align: center;
+      text-shadow: 0 -1px 1px #000f4d;
+      width: 200px; }
+      #get-user-stats:hover {
+        background-color: #7f8dad;
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7f8dad), color-stop(50%, #4a5e8c), color-stop(50%, #2f477d), color-stop(100%, #364c80));
+        background-image: -webkit-linear-gradient(top, #7f8dad 0%, #4a5e8c 50%, #2f477d 50%, #364c80 100%);
+        background-image: -moz-linear-gradient(top, #7f8dad 0%, #4a5e8c 50%, #2f477d 50%, #364c80 100%);
+        background-image: -ms-linear-gradient(top, #7f8dad 0%, #4a5e8c 50%, #2f477d 50%, #364c80 100%);
+        background-image: -o-linear-gradient(top, #7f8dad 0%, #4a5e8c 50%, #2f477d 50%, #364c80 100%);
+        background-image: linear-gradient(top, #7f8dad 0%, #4a5e8c 50%, #2f477d 50%, #364c80 100%);
+        cursor: pointer; }
+      #get-user-stats:active {
+        -webkit-box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 white;
+        box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 white;
+}
+
+.button {
+  background-color: #d7e5f5;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d7e5f5), color-stop(100%, #cbe0f5));
+  background-image: -webkit-linear-gradient(top, #d7e5f5, #cbe0f5);
+  background-image: -moz-linear-gradient(top, #d7e5f5, #cbe0f5);
+  background-image: -ms-linear-gradient(top, #d7e5f5, #cbe0f5);
+  background-image: -o-linear-gradient(top, #d7e5f5, #cbe0f5);
+  background-image: linear-gradient(top, #d7e5f5, #cbe0f5);
+  border-top: 1px solid #abbbcc;
+  border-left: 1px solid #a7b6c7;
+  border-bottom: 1px solid #a1afbf;
+  border-right: 1px solid #a7b6c7;
+  border-radius: 12px;
+  -webkit-box-shadow: inset 0 1px 0 0 white;
+  box-shadow: inset 0 1px 0 0 white;
+  color: #1a3e66;
+  font: normal 14px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  padding: 6px 0 7px 0;
+  text-align: center;
+  text-shadow: 0 1px 1px #fff;
+  width: 70px; }
+  .button:hover {
+    background-color: #ccd9e8;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ccd9e8), color-stop(100%, #c1d4e8));
+    background-image: -webkit-linear-gradient(top, #ccd9e8, #c1d4e8);
+    background-image: -moz-linear-gradient(top, #ccd9e8, #c1d4e8);
+    background-image: -ms-linear-gradient(top, #ccd9e8, #c1d4e8);
+    background-image: -o-linear-gradient(top, #ccd9e8, #c1d4e8);
+    background-image: linear-gradient(top, #ccd9e8, #c1d4e8);
+    border-top: 1px solid #a1afbf;
+    border-left: 1px solid #9caaba;
+    border-bottom: 1px solid #96a3b3;
+    border-right: 1px solid #9caaba;
+    -webkit-box-shadow: inset 0 1px 0 0 #f2f2f2;
+    box-shadow: inset 0 1px 0 0 #f2f2f2;
+    color: #163659;
+    cursor: pointer; }
+  .button:active {
+    border: 1px solid #8c98a7;
+    -webkit-box-shadow: inset 0 0 4px 2px #abbccf, 0 0 1px 0 #eeeeee;
+    box-shadow: inset 0 0 4px 2px #abbccf, 0 0 1px 0 #eeeeee;
+}
+
+.get-user-stats-wrapper {
+  text-align: center;
+  margin-top: 10px;
+}
 
 .reset-wrapper {
   margin: auto;
@@ -160,24 +254,30 @@ margin-top: 30px;
 }
 
 .user-stats {
-  background-color: blue;
+  background-color: #e0ffff;
   margin-left: 20%;
   margin-right: 20%;
   text-align: center;
+  border-color: black;
+  border: solid 3px;
+  margin-top: 20px;
 }
 
 .scoreboard {
   text-align: center;
 }
 
+.navbar-header {
+  text-color: white;
+  text-weight: bold;
+}
+
 #sign-up-back {
   float: right;
-  clear: right;
 }
 
 #change-password-back {
   float: right;
-  clear: right;
 }
 
 #reset-score {
@@ -192,61 +292,86 @@ margin-top: 30px;
   float: right;
 }
 
-.sign-in-submit {
+#sign-in-submit {
   float: right;
 }
 
 .sign-up-email {
   float: right;
+  width: 250px;
+  margin-right: 3px;
 }
 
 .sign-up-password {
   float: right;
+  width: 225px;
+  margin-right: 2px
 }
 
 .sign-up-confirm {
   float: right;
+  width: 225px;
+  margin-right: 2px;
 }
 
-.sign-up-button {
+#sign-up-button {
   float: right;
+  margin-right: 11px;
 }
 
 .change-password-new {
   float: right;
+  width: 225px;
+  margin-right: 2px;
 }
 
 .change-password-old {
   float: right;
+  width: 225px;
+  margin-right: 2px;
 }
 
-.change-password-button {
+#change-password-button {
   float: right;
+  width: 100px;
+  margin-left: 2px;
+  margin-right: 4px;
 }
 
 #get-change-password {
   float: right;
-}
-
-#sign-in-form {
-  overflow: hidden;
+  margin-right: 4px;
+  width: 100px;
 }
 
 #get-sign-up {
   float: right;
+  margin-left: 7px;
+}
+
+#sign-in-form {
+  float: right;
+  margin-right: 4px;
+}
+
+.sign-in-email {
+  width: 250px;
+  margin-right: 2px;
+}
+
+.sign-in-password {
+  width: 225px;
+  margin-right: 2px;
 }
 
 #sign-up-form {
-  clear: right;
   float: right;
 }
 
 #change-password-form {
-  clear: right;
   float: right;
 }
 
 #sign-out {
-  clear: right;
   float: right;
 }
