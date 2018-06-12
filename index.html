@@ -32,9 +32,9 @@
             <button id="sign-up-back" class='button'>Back</button>
             <form id="sign-up-form">
               <button type="submit" id="sign-up-button" class='button'>Sign Up</button>
-              <input name="credentials[password_confirmation]" class = "sign-up-confirm" placeholder="Password Confirmation" type="text">
-              <input name="credentials[password]" class = "sign-up-password" placeholder="Password" type="text">
-              <input name="credentials[email]" class = "sign-up-email" placeholder="Sign Up - Email" type="text">
+              <input name="credentials[password_confirmation]" class = "sign-up-confirm" placeholder="Password Confirmation" type="password">
+              <input name="credentials[password]" class = "sign-up-password" placeholder="Password" type="password">
+              <input name="credentials[email]" class = "sign-up-email" placeholder="Sign Up - Email" type="email">
               <p class="passwords-match">Passwords do not match </p>
               <p class="email-taken">Email is already taken </p>
               <p class="enter-email">Please enter your information </p>
@@ -48,8 +48,8 @@
             </section>
             <form id="change-password-form">
               <button type="submit" id="change-password-button" class='button'>Change Password</button>
-              <input name="passwords[new]" class="change-password-new" placeholder="New Password" type="text">
-              <input name="passwords[old]" class="change-password-old" placeholder="Old Password" type="text">
+              <input name="passwords[new]" class="change-password-new" placeholder="New Password" type="password">
+              <input name="passwords[old]" class="change-password-old" placeholder="Old Password" type="password">
             </form>
               <p class="change-confirmation"> Password Changed </p>
         </div>
@@ -84,6 +84,9 @@
       </div>
     </div>
   </div>
+  <div class='start-notifier'>
+    <p>New Game Begun!</p>
+  </div>
 
   <div class='scoreboard'>
     <h3>Score Board</h3>
@@ -93,6 +96,9 @@
   </div>
   <div class='reset-wrapper'>
     <button id="reset-score">Reset Score</button>
+  </div>
+  <div class='reset-notifier'>
+    <p>Score has been reset</p>
   </div>
 
     <div class='user-stats'>
@@ -105,9 +111,13 @@
         <li id='OWins'>Player O Wins: </li>
       </ul>
     </div>
+    <div class='stats-notifier'>
+      <p>Stats are up-to-date</p>
+    </div>
     <div class="get-user-stats-wrapper">
       <button id='get-user-stats'>Update User Stats</button>
     </div>
+
 
     </body>
 </html>

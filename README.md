@@ -1,4 +1,4 @@
-Tic Tac Toe game for General Assembly
+Tic Tac Toe game - first project for General Assembly
 
 Technologies used:
 HTML, CSS, SCSS, Javascript, AJAX, JQuery

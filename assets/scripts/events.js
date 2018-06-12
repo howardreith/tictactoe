@@ -66,10 +66,6 @@ const updateMoveObject = {
 const onClick = function (event) {
   event.preventDefault()
   round = round + 1 // round tracker
-  console.log('Round ' + round)
-  console.log('Player 1 Wins: ' + player1Wins)
-  console.log('Player 2 Wins: ' + player2Wins)
-  console.log('Draws: ' + draws)
   if (round % 2 === 1) {
     document.getElementById(this.id).innerHTML = 'X'
     const theNum = this.id.replace(/^\D+/g, '')
@@ -83,7 +79,7 @@ const onClick = function (event) {
   }
   if (boxes[0].value === 'x' && boxes[1].value === 'x' && boxes[2].value === 'x') {
     winner = 'Player 1'
-    console.log('The winner is ' + winner)
+    // console.log('The winner is ' + winner)
     gameOn = false
     player1Wins++
     if (gameOn !== true) {
@@ -110,7 +106,7 @@ const onClick = function (event) {
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
-      console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      // console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
       $('#playerXScore').text('Player X: ' + player1Wins)
       $('#playerOScore').text('Player O: ' + player2Wins)
       $('#drawScore').text('Draws: ' + draws)
@@ -119,7 +115,7 @@ const onClick = function (event) {
     return player1Wins
   } else if (boxes[3].value === 'x' && boxes[4].value === 'x' && boxes[5].value === 'x') {
     winner = 'Player 1'
-    console.log('The winner is ' + winner)
+    // console.log('The winner is ' + winner)
     gameOn = false
     player1Wins++
     if (gameOn !== true) {
@@ -146,7 +142,7 @@ const onClick = function (event) {
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
-      console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      // console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
       $('#playerXScore').text('Player X: ' + player1Wins)
       $('#playerOScore').text('Player O: ' + player2Wins)
       $('#drawScore').text('Draws: ' + draws)
@@ -154,7 +150,7 @@ const onClick = function (event) {
     return player1Wins
   } else if (boxes[6].value === 'x' && boxes[7].value === 'x' && boxes[8].value === 'x') {
     winner = 'Player 1'
-    console.log('The winner is ' + winner)
+    // console.log('The winner is ' + winner)
     gameOn = false
     player1Wins++
     if (gameOn !== true) {
@@ -181,7 +177,7 @@ const onClick = function (event) {
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
-      console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      // console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
       $('#playerXScore').text('Player X: ' + player1Wins)
       $('#playerOScore').text('Player O: ' + player2Wins)
       $('#drawScore').text('Draws: ' + draws)
@@ -189,7 +185,7 @@ const onClick = function (event) {
     return player1Wins
   } else if (boxes[0].value === 'x' && boxes[3].value === 'x' && boxes[6].value === 'x') {
     winner = 'Player 1'
-    console.log('The winner is ' + winner)
+    // console.log('The winner is ' + winner)
     gameOn = false
     player1Wins++
     if (gameOn !== true) {
@@ -216,7 +212,7 @@ const onClick = function (event) {
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
-      console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      // console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
       $('#playerXScore').text('Player X: ' + player1Wins)
       $('#playerOScore').text('Player O: ' + player2Wins)
       $('#drawScore').text('Draws: ' + draws)
@@ -224,7 +220,7 @@ const onClick = function (event) {
     return player1Wins
   } else if (boxes[1].value === 'x' && boxes[4].value === 'x' && boxes[7].value === 'x') {
     winner = 'Player 1'
-    console.log('The winner is ' + winner)
+    // console.log('The winner is ' + winner)
     gameOn = false
     player1Wins++
     if (gameOn !== true) {
@@ -251,7 +247,7 @@ const onClick = function (event) {
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
-      console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      // console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
       $('#playerXScore').text('Player X: ' + player1Wins)
       $('#playerOScore').text('Player O: ' + player2Wins)
       $('#drawScore').text('Draws: ' + draws)
@@ -259,7 +255,7 @@ const onClick = function (event) {
     return player1Wins
   } else if (boxes[2].value === 'x' && boxes[5].value === 'x' && boxes[8].value === 'x') {
     winner = 'Player 1'
-    console.log('The winner is ' + winner)
+    // console.log('The winner is ' + winner)
     gameOn = false
     player1Wins++
     if (gameOn !== true) {
@@ -286,7 +282,7 @@ const onClick = function (event) {
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
-      console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      // console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
       $('#playerXScore').text('Player X: ' + player1Wins)
       $('#playerOScore').text('Player O: ' + player2Wins)
       $('#drawScore').text('Draws: ' + draws)
@@ -294,7 +290,7 @@ const onClick = function (event) {
     return player1Wins
   } else if (boxes[0].value === 'x' && boxes[4].value === 'x' && boxes[8].value === 'x') {
     winner = 'Player 1'
-    console.log('The winner is ' + winner)
+    // console.log('The winner is ' + winner)
     gameOn = false
     player1Wins++
     if (gameOn !== true) {
@@ -321,7 +317,7 @@ const onClick = function (event) {
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
-      console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      // console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
       $('#playerXScore').text('Player X: ' + player1Wins)
       $('#playerOScore').text('Player O: ' + player2Wins)
       $('#drawScore').text('Draws: ' + draws)
@@ -329,7 +325,7 @@ const onClick = function (event) {
     return player1Wins
   } else if (boxes[2].value === 'x' && boxes[4].value === 'x' && boxes[6].value === 'x') {
     winner = 'Player 1'
-    console.log('The winner is ' + winner)
+    // console.log('The winner is ' + winner)
     gameOn = false
     player1Wins++
     if (gameOn !== true) {
@@ -356,7 +352,7 @@ const onClick = function (event) {
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
-      console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      // console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
       $('#playerXScore').text('Player X: ' + player1Wins)
       $('#playerOScore').text('Player O: ' + player2Wins)
       $('#drawScore').text('Draws: ' + draws)
@@ -364,7 +360,7 @@ const onClick = function (event) {
     return player1Wins
   } else if (boxes[0].value === 'o' && boxes[1].value === 'o' && boxes[2].value === 'o') {
     winner = 'Player 2'
-    console.log('The winner is ' + winner)
+    // console.log('The winner is ' + winner)
     gameOn = false
     player1Wins++
     if (gameOn !== true) {
@@ -391,7 +387,7 @@ const onClick = function (event) {
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
-      console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      // console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
       $('#playerXScore').text('Player X: ' + player1Wins)
       $('#playerOScore').text('Player O: ' + player2Wins)
       $('#drawScore').text('Draws: ' + draws)
@@ -400,7 +396,7 @@ const onClick = function (event) {
   } else if (boxes[3].value === 'o' && boxes[4].value === 'o' && boxes[5].value === 'o') {
     winner = 'Player 2'
     player2Wins++
-    console.log('The winner is ' + winner)
+    // console.log('The winner is ' + winner)
     gameOn = false
     if (gameOn !== true) {
       $('#box0').off('click', onClick)
@@ -426,7 +422,7 @@ const onClick = function (event) {
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
-      console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      // console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
       $('#playerXScore').text('Player X: ' + player1Wins)
       $('#playerOScore').text('Player O: ' + player2Wins)
       $('#drawScore').text('Draws: ' + draws)
@@ -434,7 +430,7 @@ const onClick = function (event) {
     return player2Wins
   } else if (boxes[6].value === 'o' && boxes[7].value === 'o' && boxes[8].value === 'o') {
     winner = 'Player 2'
-    console.log('The winner is ' + winner)
+    // console.log('The winner is ' + winner)
     gameOn = false
     player2Wins++
     if (gameOn !== true) {
@@ -461,7 +457,7 @@ const onClick = function (event) {
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
-      console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      // console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
       $('#playerXScore').text('Player X: ' + player1Wins)
       $('#playerOScore').text('Player O: ' + player2Wins)
       $('#drawScore').text('Draws: ' + draws)
@@ -469,7 +465,7 @@ const onClick = function (event) {
     return player2Wins
   } else if (boxes[0].value === 'o' && boxes[3].value === 'o' && boxes[6].value === 'o') {
     winner = 'Player 2'
-    console.log('The winner is ' + winner)
+    // console.log('The winner is ' + winner)
     gameOn = false
     player2Wins++
     if (gameOn !== true) {
@@ -496,7 +492,7 @@ const onClick = function (event) {
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
-      console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      // console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
       $('#playerXScore').text('Player X: ' + player1Wins)
       $('#playerOScore').text('Player O: ' + player2Wins)
       $('#drawScore').text('Draws: ' + draws)
@@ -504,7 +500,7 @@ const onClick = function (event) {
     return player2Wins
   } else if (boxes[1].value === 'o' && boxes[4].value === 'o' && boxes[7].value === 'o') {
     winner = 'Player 2'
-    console.log('The winner is ' + winner)
+    // console.log('The winner is ' + winner)
     gameOn = false
     player2Wins++
     if (gameOn !== true) {
@@ -531,7 +527,7 @@ const onClick = function (event) {
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
-      console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      // console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
       $('#playerXScore').text('Player X: ' + player1Wins)
       $('#playerOScore').text('Player O: ' + player2Wins)
       $('#drawScore').text('Draws: ' + draws)
@@ -539,7 +535,7 @@ const onClick = function (event) {
     return player2Wins
   } else if (boxes[2].value === 'o' && boxes[5].value === 'o' && boxes[8].value === 'o') {
     winner = 'Player 2'
-    console.log('The winner is ' + winner)
+    // console.log('The winner is ' + winner)
     gameOn = false
     player2Wins++
     if (gameOn !== true) {
@@ -566,7 +562,7 @@ const onClick = function (event) {
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
-      console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      // console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
       $('#playerXScore').text('Player X: ' + player1Wins)
       $('#playerOScore').text('Player O: ' + player2Wins)
       $('#drawScore').text('Draws: ' + draws)
@@ -574,7 +570,7 @@ const onClick = function (event) {
     return player2Wins
   } else if (boxes[0].value === 'o' && boxes[4].value === 'o' && boxes[8].value === 'o') {
     winner = 'Player 2'
-    console.log('The winner is ' + winner)
+    // console.log('The winner is ' + winner)
     gameOn = false
     player2Wins++
     if (gameOn !== true) {
@@ -601,7 +597,7 @@ const onClick = function (event) {
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
-      console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      // console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
       $('#playerXScore').text('Player X: ' + player1Wins)
       $('#playerOScore').text('Player O: ' + player2Wins)
       $('#drawScore').text('Draws: ' + draws)
@@ -609,7 +605,7 @@ const onClick = function (event) {
     return player2Wins
   } else if (boxes[2].value === 'o' && boxes[4].value === 'o' && boxes[6].value === 'o') {
     winner = 'Player 2'
-    console.log('The winner is ' + winner)
+    // console.log('The winner is ' + winner)
     gameOn = false
     player2Wins++
     if (gameOn !== true) {
@@ -636,15 +632,15 @@ const onClick = function (event) {
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
-      console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      // console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
       $('#playerXScore').text('Player X: ' + player1Wins)
       $('#playerOScore').text('Player O: ' + player2Wins)
       $('#drawScore').text('Draws: ' + draws)
     }
     return player2Wins
-  } else if (round > 8) {
+  } else if (round > 8 && winner !== 'Player 1' && winner !== 'Player 2') {
     winner = 'Draw'
-    console.log('The game is a ' + winner)
+    // console.log('The game is a ' + winner)
     gameOn = false
     draws++
     if (gameOn !== true) {
@@ -671,7 +667,7 @@ const onClick = function (event) {
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
-      console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
+      // console.log('updateMoveObject.game.over is ' + updateMoveObject.game.over)
       $('#playerXScore').text('Player X: ' + player1Wins)
       $('#playerOScore').text('Player O: ' + player2Wins)
       $('#drawScore').text('Draws: ' + draws)
@@ -821,12 +817,12 @@ const onUpdateMove = function (event) {
     const theNum = this.id.replace(/^\D+/g, '')
     updateMoveObject.game.cell.index = theNum
     updateMoveObject.game.cell.value = 'x'
-    console.log('The new values are ' + updateMoveObject.game.cell.index + updateMoveObject.game.cell.value)
+    // console.log('The new values are ' + updateMoveObject.game.cell.index + updateMoveObject.game.cell.value)
   } else if (thisRound % 2 === 0) {
     const theNum = this.id.replace(/^\D+/g, '')
     updateMoveObject.game.cell.index = theNum
     updateMoveObject.game.cell.value = 'o'
-    console.log('The new values are ' + updateMoveObject.game.cell.index + updateMoveObject.game.cell.value)
+    // console.log('The new values are ' + updateMoveObject.game.cell.index + updateMoveObject.game.cell.value)
   }
   api.updateMove(updateMoveObject)
     .then(authUi.updateMoveSuccess)
@@ -891,6 +887,8 @@ const onNewGame = function (event) {
   boxes[8].value = null
   round = 0
   thisRound = 0
+  $('.start-notifier').show()
+  $('.start-notifier').delay(2000).fadeOut('fast')
   api.createGame()
     .then(authUi.createGameSuccess)
     .catch(authUi.createGameFail)
@@ -915,6 +913,8 @@ const onGetUserStats = function (event) {
   api.getUserGameData()
     .then(authUi.getUserGameDataSuccess)
     .catch(authUi.getUserGameDataFail)
+  $('.stats-notifier').show()
+  $('.stats-notifier').delay(2000).fadeOut('fast')
 }
 
 const onResetScore = function (event) {
@@ -925,6 +925,8 @@ const onResetScore = function (event) {
   $('#playerXScore').text('Player X: ' + player1Wins)
   $('#playerOScore').text('Player O: ' + player2Wins)
   $('#drawScore').text('Draws: ' + draws)
+  $('.reset-notifier').show()
+  $('.reset-notifier').delay(2000).fadeOut('fast')
 }
 
 module.exports = {

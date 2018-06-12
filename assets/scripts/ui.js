@@ -2,16 +2,16 @@
 const store = require('./store')
 const api = require('./api.js')
 
-const clickSuccess = function (clickResponse) {
-  console.log('Click is', clickResponse)
-}
-
-const clickError = function (error) {
-  console.log('Error is ', error)
-}
+// const clickSuccess = function (clickResponse) {
+//   console.log('Click is', clickResponse)
+// }
+//
+// const clickError = function (error) {
+//   console.log('Error is ', error)
+// }
 
 const signUpSuccess = function (signUpResponse) {
-  console.log('signUpResponse is', signUpResponse)
+  // console.log('signUpResponse is ' + signUpResponse)
   $('#sign-in-form').show()
   $('#get-sign-up').show()
   $('#sign-up-form').hide()
@@ -22,7 +22,7 @@ const signUpSuccess = function (signUpResponse) {
 }
 
 const signUpError = function (error) {
-  console.log('Error is ' + error)
+  // console.log('Error is ' + error)
   if (error.responseText === '{"email":["has already been taken"]}') {
     $('.email-taken').show()
   } else {
@@ -32,7 +32,7 @@ const signUpError = function (error) {
 }
 
 const signInSuccess = function (signInResponse) {
-  console.log('signInResponse is', signInResponse)
+  // console.log('signInResponse is', signInResponse)
   store.user = signInResponse.user
   $('#get-change-password').show()
   $('#sign-in-form').hide()
@@ -49,15 +49,15 @@ const signInSuccess = function (signInResponse) {
     .catch(createGameFail)
 }
 
-const signInError = function (error) {
-  console.log('Error is ', error)
+const signInError = function () {
+  // console.log('Error is ', error)
   $('.invalid-credentials').show()
   $('.signup-success').hide()
   document.getElementById('sign-in-form').reset()
 }
 
 const changePasswordSuccess = function (changePasswordResponse) {
-  console.log('changePasswordResponse is', changePasswordResponse)
+  // console.log('changePasswordResponse is', changePasswordResponse)
   $('#change-password-form').hide()
   $('#sign-out').show()
   $('#get-change-password').show()
@@ -66,13 +66,13 @@ const changePasswordSuccess = function (changePasswordResponse) {
   $('#change-password-back').hide()
 }
 
-const changePasswordError = function (error) {
-  console.log('Error is ' + error)
+const changePasswordError = function () {
+  // console.log('Error is ' + error)
   document.getElementById('change-password-form').reset()
 }
 
 const signOutSuccess = function (signOutResponse) {
-  console.log('signOutResponse is', signOutResponse)
+  // console.log('signOutResponse is', signOutResponse)
   $('#sign-in-form').show()
   $('#get-sign-up').show()
   $('#sign-out').hide()
@@ -89,15 +89,15 @@ const signOutSuccess = function (signOutResponse) {
   document.getElementById('sign-out-form').reset()
 }
 
-const signOutError = function (error) {
-  console.log('Error is ', error)
+const signOutError = function () {
+  // console.log('Error is ', error)
   document.getElementById('sign-out-form').reset()
 }
 
 const createGameSuccess = function (createGameResponse) {
-  console.log('createGameResponse is', createGameResponse)
+  // console.log('createGameResponse is', createGameResponse)
   store.id = createGameResponse.game.id
-  console.log('store.id is' + store.id)
+  // console.log('store.id is' + store.id)
   $('.play-area').show()
   $('.scoreboard').show()
   $('#reset-score').show()
@@ -108,28 +108,29 @@ const createGameSuccess = function (createGameResponse) {
   $('.turn-notifier').text("Player X's turn")
 }
 
-const createGameFail = function (error) {
-  console.log('Error is ', error)
+const createGameFail = function () {
+  // console.log('Error is ', error)
 }
 
 const getGameDataSuccess = function (getGameDataResponse) {
-  console.log('getGameDataResonse is', getGameDataResponse)
+  // console.log('getGameDataResonse is', getGameDataResponse)
 }
 
-const getGameDataFail = function (error) {
-  console.log('Error is ', error)
+// re-add error as a parameter if necessary
+const getGameDataFail = function () {
+  // console.log('Error is ', error)
 }
 
 const getThisGameDataSuccess = function (getThisGameDataSuccess) {
-  console.log('getThisGameDataSuccess is', getThisGameDataSuccess)
+  // console.log('getThisGameDataSuccess is', getThisGameDataSuccess)
 }
 
-const getThisGameDataFail = function (error) {
-  console.log('Error is ', error)
+const getThisGameDataFail = function () {
+  // console.log('Error is ', error)
 }
 
 const getUserGameDataSuccess = function (getUserGameDataSuccess) {
-  console.log('getUserGameDataSuccess is', getUserGameDataSuccess)
+  // console.log('getUserGameDataSuccess is', getUserGameDataSuccess)
   store.userData = getUserGameDataSuccess
   $('#games-played').text('Games played: ' + store.userData.games.length)
   let finishedGames = 0
@@ -141,7 +142,7 @@ const getUserGameDataSuccess = function (getUserGameDataSuccess) {
     }
     $('#games-completed').text('Games completed: ' + finishedGames)
     for (let i = 0; i < store.userData.games.length; i++) {
-      console.log(store.userData.games[i].cells)
+      // console.log(store.userData.games[i].cells)
       if (store.userData.games[i].cells[0] === 'x' && store.userData.games[i].cells[1] === 'x' && store.userData.games[i].cells[2] === 'x') {
         playerXScore = playerXScore + 1
       } else if (store.userData.games[i].cells[3] === 'x' && store.userData.games[i].cells[4] === 'x' && store.userData.games[i].cells[5] === 'x') {
@@ -154,7 +155,7 @@ const getUserGameDataSuccess = function (getUserGameDataSuccess) {
         playerXScore++
       } else if (store.userData.games[i].cells[2] === 'x' && store.userData.games[i].cells[5] === 'x' && store.userData.games[i].cells[8] === 'x') {
         playerXScore++
-      } else if (store.userData.games[i].cells[0] === 'x' && store.userData.games[i].cells[4] === 'x' && store.userData.games[i].cells[6] === 'x') {
+      } else if (store.userData.games[i].cells[0] === 'x' && store.userData.games[i].cells[4] === 'x' && store.userData.games[i].cells[8] === 'x') {
         playerXScore++
       } else if (store.userData.games[i].cells[2] === 'x' && store.userData.games[i].cells[4] === 'x' && store.userData.games[i].cells[6] === 'x') {
         playerXScore++
@@ -170,7 +171,7 @@ const getUserGameDataSuccess = function (getUserGameDataSuccess) {
         playerOScore++
       } else if (store.userData.games[i].cells[2] === 'o' && store.userData.games[i].cells[5] === 'o' && store.userData.games[i].cells[8] === 'o') {
         playerOScore++
-      } else if (store.userData.games[i].cells[0] === 'o' && store.userData.games[i].cells[4] === 'o' && store.userData.games[i].cells[6] === 'o') {
+      } else if (store.userData.games[i].cells[0] === 'o' && store.userData.games[i].cells[4] === 'o' && store.userData.games[i].cells[8] === 'o') {
         playerOScore++
       } else if (store.userData.games[i].cells[2] === 'o' && store.userData.games[i].cells[4] === 'o' && store.userData.games[i].cells[6] === 'o') {
         playerOScore++
@@ -181,21 +182,21 @@ const getUserGameDataSuccess = function (getUserGameDataSuccess) {
   }
 }
 
-const getUserGameDataFail = function (error) {
-  console.log('Error is ', error)
+const getUserGameDataFail = function () {
+  // console.log('Error is ', error)
 }
 
 const updateMoveSuccess = function (updateMoveResponse) {
-  console.log('updateMoveResonse is', updateMoveResponse)
+  // console.log('updateMoveResonse is', updateMoveResponse)
 }
 
-const updateMoveFail = function (error) {
-  console.log('Error is ', error)
+const updateMoveFail = function () {
+  // console.log('Error is ', error)
 }
 
 module.exports = {
-  clickSuccess: clickSuccess,
-  clickError: clickError,
+  // clickSuccess: clickSuccess,
+  // clickError: clickError,
   signUpError: signUpError,
   signUpSuccess: signUpSuccess,
   signInSuccess: signInSuccess,
