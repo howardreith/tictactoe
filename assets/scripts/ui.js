@@ -38,7 +38,7 @@ const signInSuccess = function (signInResponse) {
   $('#sign-in-form').hide()
   $('#get-sign-up').hide()
   $('#sign-out').show()
-  $('signup-succes').hide()
+  $('.signup-success').hide()
   $('#user-email').text('Email: ' + store.user.email)
   $('#newGame').show()
   $('.please-sign-in').hide()
@@ -103,6 +103,9 @@ const createGameSuccess = function (createGameResponse) {
   $('#reset-score').show()
   $('.user-stats').show()
   $('#get-user-stats').show()
+  $('.the-title').text('Tic Tac Toe')
+  $('.turn-notifier').show()
+  $('.turn-notifier').text("Player X's turn")
 }
 
 const createGameFail = function (error) {
@@ -128,15 +131,54 @@ const getThisGameDataFail = function (error) {
 const getUserGameDataSuccess = function (getUserGameDataSuccess) {
   console.log('getUserGameDataSuccess is', getUserGameDataSuccess)
   store.userData = getUserGameDataSuccess
-  console.log('userData is ' + store.userData.games)
   $('#games-played').text('Games played: ' + store.userData.games.length)
   let finishedGames = 0
   for (let i = 0; i < store.userData.games.length; i++) {
+    let playerXScore = 0
+    let playerOScore = 0
     if (store.userData.games[i].over === true) {
       finishedGames++
     }
+    $('#games-completed').text('Games completed: ' + finishedGames)
+    for (let i = 0; i < store.userData.games.length; i++) {
+      console.log(store.userData.games[i].cells)
+      if (store.userData.games[i].cells[0] === 'x' && store.userData.games[i].cells[1] === 'x' && store.userData.games[i].cells[2] === 'x') {
+        playerXScore = playerXScore + 1
+      } else if (store.userData.games[i].cells[3] === 'x' && store.userData.games[i].cells[4] === 'x' && store.userData.games[i].cells[5] === 'x') {
+        playerXScore = playerXScore + 1
+      } else if (store.userData.games[i].cells[6] === 'x' && store.userData.games[i].cells[7] === 'x' && store.userData.games[i].cells[8] === 'x') {
+        playerXScore++
+      } else if (store.userData.games[i].cells[0] === 'x' && store.userData.games[i].cells[3] === 'x' && store.userData.games[i].cells[6] === 'x') {
+        playerXScore++
+      } else if (store.userData.games[i].cells[1] === 'x' && store.userData.games[i].cells[4] === 'x' && store.userData.games[i].cells[7] === 'x') {
+        playerXScore++
+      } else if (store.userData.games[i].cells[2] === 'x' && store.userData.games[i].cells[5] === 'x' && store.userData.games[i].cells[8] === 'x') {
+        playerXScore++
+      } else if (store.userData.games[i].cells[0] === 'x' && store.userData.games[i].cells[4] === 'x' && store.userData.games[i].cells[6] === 'x') {
+        playerXScore++
+      } else if (store.userData.games[i].cells[2] === 'x' && store.userData.games[i].cells[4] === 'x' && store.userData.games[i].cells[6] === 'x') {
+        playerXScore++
+      } else if (store.userData.games[i].cells[0] === 'o' && store.userData.games[i].cells[1] === 'o' && store.userData.games[i].cells[2] === 'o') {
+        playerOScore++
+      } else if (store.userData.games[i].cells[3] === 'o' && store.userData.games[i].cells[4] === 'o' && store.userData.games[i].cells[5] === 'o') {
+        playerOScore++
+      } else if (store.userData.games[i].cells[6] === 'o' && store.userData.games[i].cells[7] === 'o' && store.userData.games[i].cells[8] === 'o') {
+        playerOScore++
+      } else if (store.userData.games[i].cells[0] === 'o' && store.userData.games[i].cells[3] === 'o' && store.userData.games[i].cells[6] === 'o') {
+        playerOScore++
+      } else if (store.userData.games[i].cells[1] === 'o' && store.userData.games[i].cells[4] === 'o' && store.userData.games[i].cells[7] === 'o') {
+        playerOScore++
+      } else if (store.userData.games[i].cells[2] === 'o' && store.userData.games[i].cells[5] === 'o' && store.userData.games[i].cells[8] === 'o') {
+        playerOScore++
+      } else if (store.userData.games[i].cells[0] === 'o' && store.userData.games[i].cells[4] === 'o' && store.userData.games[i].cells[6] === 'o') {
+        playerOScore++
+      } else if (store.userData.games[i].cells[2] === 'o' && store.userData.games[i].cells[4] === 'o' && store.userData.games[i].cells[6] === 'o') {
+        playerOScore++
+      }
+    }
+    $('#XWins').text('Player X Wins: ' + playerXScore)
+    $('#OWins').text('Player O Wins: ' + playerOScore)
   }
-  $('#games-completed').text('Games completed: ' + finishedGames)
 }
 
 const getUserGameDataFail = function (error) {

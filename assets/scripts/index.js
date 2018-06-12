@@ -55,4 +55,5 @@ $(() => {
   $('.user-stats').hide()
   $('#get-user-stats').hide()
   $('#newGame').hide()
+  $('.turn-notifier').hide()
 })

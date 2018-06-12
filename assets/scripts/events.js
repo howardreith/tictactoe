@@ -74,10 +74,12 @@ const onClick = function (event) {
     document.getElementById(this.id).innerHTML = 'X'
     const theNum = this.id.replace(/^\D+/g, '')
     boxes[theNum].value = 'x'
+    $('.turn-notifier').text("Player O's turn")
   } else if (round % 2 === 0) {
     document.getElementById(this.id).innerHTML = 'O'
     const theNum = this.id.replace(/^\D+/g, '')
     boxes[theNum].value = 'o'
+    $('.turn-notifier').text("Player X's turn")
   }
   if (boxes[0].value === 'x' && boxes[1].value === 'x' && boxes[2].value === 'x') {
     winner = 'Player 1'
@@ -104,6 +106,7 @@ const onClick = function (event) {
       $('#box7').off('click', onUpdateMove)
       $('#box8').off('click', onUpdateMove)
       updateMoveObject.game.over = true
+      $('.the-title').text('Player X Wins!')
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
@@ -139,6 +142,7 @@ const onClick = function (event) {
       $('#box7').off('click', onUpdateMove)
       $('#box8').off('click', onUpdateMove)
       updateMoveObject.game.over = true
+      $('.the-title').text('Player X Wins!')
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
@@ -173,6 +177,7 @@ const onClick = function (event) {
       $('#box7').off('click', onUpdateMove)
       $('#box8').off('click', onUpdateMove)
       updateMoveObject.game.over = true
+      $('.the-title').text('Player X Wins!')
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
@@ -207,6 +212,7 @@ const onClick = function (event) {
       $('#box7').off('click', onUpdateMove)
       $('#box8').off('click', onUpdateMove)
       updateMoveObject.game.over = true
+      $('.the-title').text('Player X Wins!')
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
@@ -241,6 +247,7 @@ const onClick = function (event) {
       $('#box7').off('click', onUpdateMove)
       $('#box8').off('click', onUpdateMove)
       updateMoveObject.game.over = true
+      $('.the-title').text('Player X Wins!')
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
@@ -275,6 +282,7 @@ const onClick = function (event) {
       $('#box7').off('click', onUpdateMove)
       $('#box8').off('click', onUpdateMove)
       updateMoveObject.game.over = true
+      $('.the-title').text('Player X Wins!')
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
@@ -309,6 +317,7 @@ const onClick = function (event) {
       $('#box7').off('click', onUpdateMove)
       $('#box8').off('click', onUpdateMove)
       updateMoveObject.game.over = true
+      $('.the-title').text('Player X Wins!')
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
@@ -343,6 +352,7 @@ const onClick = function (event) {
       $('#box7').off('click', onUpdateMove)
       $('#box8').off('click', onUpdateMove)
       updateMoveObject.game.over = true
+      $('.the-title').text('Player X Wins!')
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
@@ -377,6 +387,7 @@ const onClick = function (event) {
       $('#box7').off('click', onUpdateMove)
       $('#box8').off('click', onUpdateMove)
       updateMoveObject.game.over = true
+      $('.the-title').text('Player O Wins!')
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
@@ -411,6 +422,7 @@ const onClick = function (event) {
       $('#box7').off('click', onUpdateMove)
       $('#box8').off('click', onUpdateMove)
       updateMoveObject.game.over = true
+      $('.the-title').text('Player O Wins!')
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
@@ -445,6 +457,7 @@ const onClick = function (event) {
       $('#box7').off('click', onUpdateMove)
       $('#box8').off('click', onUpdateMove)
       updateMoveObject.game.over = true
+      $('.the-title').text('Player O Wins!')
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
@@ -479,6 +492,7 @@ const onClick = function (event) {
       $('#box7').off('click', onUpdateMove)
       $('#box8').off('click', onUpdateMove)
       updateMoveObject.game.over = true
+      $('.the-title').text('Player O Wins!')
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
@@ -513,6 +527,7 @@ const onClick = function (event) {
       $('#box7').off('click', onUpdateMove)
       $('#box8').off('click', onUpdateMove)
       updateMoveObject.game.over = true
+      $('.the-title').text('Player O Wins!')
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
@@ -547,6 +562,7 @@ const onClick = function (event) {
       $('#box7').off('click', onUpdateMove)
       $('#box8').off('click', onUpdateMove)
       updateMoveObject.game.over = true
+      $('.the-title').text('Player O Wins!')
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
@@ -581,6 +597,7 @@ const onClick = function (event) {
       $('#box7').off('click', onUpdateMove)
       $('#box8').off('click', onUpdateMove)
       updateMoveObject.game.over = true
+      $('.the-title').text('Player O Wins!')
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
@@ -615,6 +632,7 @@ const onClick = function (event) {
       $('#box7').off('click', onUpdateMove)
       $('#box8').off('click', onUpdateMove)
       updateMoveObject.game.over = true
+      $('.the-title').text('Player O Wins!')
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
@@ -649,6 +667,7 @@ const onClick = function (event) {
       $('#box7').off('click', onUpdateMove)
       $('#box8').off('click', onUpdateMove)
       updateMoveObject.game.over = true
+      $('.the-title').text("It's a draw!")
       api.updateMove(updateMoveObject)
         .then(authUi.updateMoveSuccess)
         .catch(authUi.updateMoveFail)
@@ -744,6 +763,51 @@ const onSignOut = function (event) {
   $('#playerXScore').text('Player X: ' + player1Wins)
   $('#playerOScore').text('Player O: ' + player2Wins)
   $('#drawScore').text('Draws: ' + draws)
+  document.getElementById('box0').innerHTML = ''
+  document.getElementById('box1').innerHTML = ''
+  document.getElementById('box2').innerHTML = ''
+  document.getElementById('box3').innerHTML = ''
+  document.getElementById('box4').innerHTML = ''
+  document.getElementById('box5').innerHTML = ''
+  document.getElementById('box6').innerHTML = ''
+  document.getElementById('box7').innerHTML = ''
+  document.getElementById('box8').innerHTML = ''
+  $('#box0').off('click', onClick)
+  $('#box1').off('click', onClick)
+  $('#box2').off('click', onClick)
+  $('#box3').off('click', onClick)
+  $('#box4').off('click', onClick)
+  $('#box5').off('click', onClick)
+  $('#box6').off('click', onClick)
+  $('#box7').off('click', onClick)
+  $('#box8').off('click', onClick)
+  $('#box0').one('click', onClick)
+  $('#box1').one('click', onClick)
+  $('#box2').one('click', onClick)
+  $('#box3').one('click', onClick)
+  $('#box4').one('click', onClick)
+  $('#box5').one('click', onClick)
+  $('#box6').one('click', onClick)
+  $('#box7').one('click', onClick)
+  $('#box8').one('click', onClick)
+  boxes[0].value = null
+  boxes[1].value = null
+  boxes[2].value = null
+  boxes[3].value = null
+  boxes[4].value = null
+  boxes[5].value = null
+  boxes[6].value = null
+  boxes[7].value = null
+  boxes[8].value = null
+  round = 0
+  thisRound = 0
+  $('#user-email').text('Email: ')
+  $('#games-played').text('Games Played: ')
+  $('#games-completed').text('Games Completed: ')
+  $('#XWins').text('Player X Wins: ')
+  $('#OWins').text('Player O Wins: ')
+  $('.the-title').text('Tic Tac Toe')
+  $('.turn-notifier').hide()
   api.signOut()
     .then(authUi.signOutSuccess)
     .catch(authUi.signOutFail)
@@ -789,6 +853,15 @@ const onNewGame = function (event) {
   $('#box6').off('click', onClick)
   $('#box7').off('click', onClick)
   $('#box8').off('click', onClick)
+  $('#box0').off('click', onUpdateMove)
+  $('#box1').off('click', onUpdateMove)
+  $('#box2').off('click', onUpdateMove)
+  $('#box3').off('click', onUpdateMove)
+  $('#box4').off('click', onUpdateMove)
+  $('#box5').off('click', onUpdateMove)
+  $('#box6').off('click', onUpdateMove)
+  $('#box7').off('click', onUpdateMove)
+  $('#box8').off('click', onUpdateMove)
   $('#box0').one('click', onClick)
   $('#box1').one('click', onClick)
   $('#box2').one('click', onClick)
@@ -798,6 +871,15 @@ const onNewGame = function (event) {
   $('#box6').one('click', onClick)
   $('#box7').one('click', onClick)
   $('#box8').one('click', onClick)
+  $('#box0').one('click', onUpdateMove)
+  $('#box1').one('click', onUpdateMove)
+  $('#box2').one('click', onUpdateMove)
+  $('#box3').one('click', onUpdateMove)
+  $('#box4').one('click', onUpdateMove)
+  $('#box5').one('click', onUpdateMove)
+  $('#box6').one('click', onUpdateMove)
+  $('#box7').one('click', onUpdateMove)
+  $('#box8').one('click', onUpdateMove)
   boxes[0].value = null
   boxes[1].value = null
   boxes[2].value = null
@@ -844,15 +926,6 @@ const onResetScore = function (event) {
   $('#playerOScore').text('Player O: ' + player2Wins)
   $('#drawScore').text('Draws: ' + draws)
 }
-
-// let playerXScore = 0
-// let playerOScore = 0
-//
-// console.log('userdata is ' + store.userData.game[1][1])
-
-// for (i=0; i<store.userData.games.length; I++) {
-//   if (store.userData.games[i] === [["", "", "", "", "", "", "", "", ""]])
-// }
 
 module.exports = {
   onClick: onClick,
