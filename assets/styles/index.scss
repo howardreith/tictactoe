@@ -16,6 +16,30 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   line-height: 200px;
 }
 
+@media screen and (max-width: 650px) {
+  .box {
+    height: 100px;
+    width: 100px;
+    font-size: 60px;
+    line-height: 100px
+  }
+  .scoreboard {
+    width: 250px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .box {
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    font-size: 30px;
+  }
+}
+
 .navbar {
   background-color: #003366;
 }
@@ -28,7 +52,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   margin: auto;
   margin-bottom: 30px;
   margin-top: 30px;
-
 }
 
 h1 {
@@ -290,6 +313,7 @@ margin-top: 30px;
 
 .sign-in-email {
   float: right;
+  margin-left: 4px;
 }
 
 #sign-in-submit {
@@ -300,6 +324,7 @@ margin-top: 30px;
   float: right;
   width: 250px;
   margin-right: 3px;
+  margin-left: 4px;
 }
 
 .sign-up-password {

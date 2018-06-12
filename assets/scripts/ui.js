@@ -17,6 +17,7 @@ const signUpSuccess = function (signUpResponse) {
   $('#sign-up-form').hide()
   $('.signup-success').show()
   $('.signup-success').text('Thank you ' + signUpResponse.user.email + '. Please sign in.')
+  $('#sign-up-back').hide()
   document.getElementById('sign-up-form').reset()
 }
 
@@ -51,6 +52,7 @@ const signInSuccess = function (signInResponse) {
 const signInError = function (error) {
   console.log('Error is ', error)
   $('.invalid-credentials').show()
+  $('.signup-success').hide()
   document.getElementById('sign-in-form').reset()
 }
 
