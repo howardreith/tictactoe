@@ -638,7 +638,7 @@ const onClick = function (event) {
       $('#drawScore').text('Draws: ' + draws)
     }
     return player2Wins
-  } else if (round > 8 && winner !== 'Player 1' && winner !== 'Player 2') {
+  } else if (round > 8) {
     winner = 'Draw'
     // console.log('The game is a ' + winner)
     gameOn = false
