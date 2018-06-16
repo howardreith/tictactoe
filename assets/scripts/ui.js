@@ -68,8 +68,8 @@ const changePasswordSuccess = function (changePasswordResponse) {
   $('.change-confirmation').delay(4000).fadeOut('fast')
 }
 
-const changePasswordError = function (error) {
-  console.log('Error is ' + error)
+const changePasswordError = function () {
+  // console.log('Error is ' + error)
   document.getElementById('change-password-form').reset()
   $('.invalid-change-password').show()
 }
