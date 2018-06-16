@@ -43,6 +43,7 @@ $(() => {
   $('.invalid-credentials').hide()
   $('.passwords-match').hide()
   $('.email-taken').hide()
+  $('.invalid-change-password').hide()
   $('#sign-up-back').hide()
   $('#sign-up-back').on('click', events.onSignUpBack)
   $('.enter-email').hide()
