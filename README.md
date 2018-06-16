@@ -6,6 +6,9 @@ HTML, CSS, SCSS, Javascript, AJAX, JQuery
 I would also like to note that the three varieties of buttons used on this project employed CSS drawn from this website:
 https://freshdesignweb.com/css3-buttons/
 
+A link to the live web application is available here:
+https://howardreith.github.io/tictactoe/
+
 Planning:
 My initial planning involved breaking down the entire project into as many reasonable small steps as I could imagine. My original steps were as follows:
 
@@ -34,7 +37,9 @@ I generally did my best to break every problem into as many small, simple proble
 
 The code is generally extremely un-dry. As I continued this project my coding skills improved dramatically and I found myself regretting some of the decisions I made toward the beginning. The entire click detection system is ridiculously bloated with the same code repeated several times. Essentially the same function for communicating the status of each square is repeated twice, once for populating the game on-screen, and once for populating the API. This should be consolidated, but with such limited time remaining I am hesitant to make these changes now.
 
-Aside from being extremely bloated the code seems to be pretty solid and I am not presently aware of any errors that need addressing. It has passed my tests and QA I've done with several colleagues.
+The page is also presently unfriendly on mobile devices. The board resizes appropriately but the nav bar doesn't re-organize in an aesthetically pleasing way and the score board doesn't shrink to accommodate the screen. With additional time, I would address this problem as well.
+
+Aside from these issues the code seems to be pretty solid and I am not presently aware of any errors that need addressing. It has passed my tests and QA I've done with several colleagues.
 
 Wireframes
 
