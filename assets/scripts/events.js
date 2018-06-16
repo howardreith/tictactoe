@@ -717,6 +717,7 @@ const onChangePasswordBack = function (event) {
   $('#sign-out').show()
   $('.change-confirmation').hide()
   $('#change-password-back').hide()
+  $('.invalid-change-password').hide()
   document.getElementById('change-password-form').reset()
 }
 
@@ -748,7 +749,7 @@ const onChangePassword = function (event) {
 
   api.changePassword(data)
     .then(authUi.changePasswordSuccess)
-    .catch(authUi.changePasswordFail)
+    .catch(authUi.changePasswordError)
 }
 
 const onSignOut = function (event) {
